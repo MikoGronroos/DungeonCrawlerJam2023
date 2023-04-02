@@ -13,13 +13,21 @@ public class PlayerController : MonoBehaviour
     Vector3 prevTargetGridPos;
     Vector3 targetRotation;
 
+    [SerializeField] private int movementMultiplyer;
+
     private void Start()
     {
         targetGridPos = Vector3Int.RoundToInt(transform.position);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.W)) MoveForward();
+        if (Input.GetKeyDown(KeyCode.S)) MoveBackward();
+        if (Input.GetKeyDown(KeyCode.D)) RotateRight();
+        if (Input.GetKeyDown(KeyCode.A)) RotateLeft();
+
         Move();
     }
 
@@ -54,8 +62,8 @@ public class PlayerController : MonoBehaviour
 
     public void RotateLeft() { if (AtRest) targetRotation -= Vector3.up * 90f; }
     public void RotateRight() { if (AtRest) targetRotation += Vector3.up * 90f; }
-    public void MoveForward() { if (AtRest) targetGridPos += transform.forward; }
-    public void MoveBackward() { if (AtRest) targetGridPos -= transform.forward; }
+    public void MoveForward() { if (AtRest) targetGridPos += transform.forward * movementMultiplyer; }
+    public void MoveBackward() { if (AtRest) targetGridPos -= transform.forward * movementMultiplyer; }
     public void MoveLeft() { if (AtRest) targetGridPos -= transform.right; }
     public void MoveRight() { if (AtRest) targetGridPos += transform.right; }
 
