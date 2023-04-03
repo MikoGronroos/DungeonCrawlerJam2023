@@ -1,15 +1,18 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 using Random = UnityEngine.Random;
 
 public class Combat : MonoBehaviour
 {
 
-    [SerializeField] private int baseDamage = 1;
-
     [SerializeField] private Enemy enemy;
     [SerializeField] private Player player;
+
+    [SerializeField] private Dice dicePrefab;
+    [SerializeField] private Transform diceSpawnPos;
 
     private int currentTurn;
     private int previousTurn;
@@ -33,35 +36,44 @@ public class Combat : MonoBehaviour
         _participants[currentTurn].StartTurn(this);
     }
 
-    public bool Attack()
+    public void EndCombat()
     {
-        IParticipant attacker = _participants[currentTurn];
-        IParticipant target = _participants[previousTurn];
-        bool attack = false;
-        int newDamage = 0;
-        var dice = new Dice();
-        var roll = dice.Roll();
-        if (attacker.GetStats().Strength + roll >= target.GetStats().Defense)
-        {
-            newDamage = baseDamage + attacker.GetStats().Strength + roll - target.GetStats().Defense;
-            attack = true;
-        }
-        Debug.Log(newDamage);
-        target.Damage(newDamage);
-        return attack;
+        isInCombat = false;
     }
 
-    public bool TryToHit()
+    private IEnumerator AttackIEnumerator()
     {
         IParticipant attacker = _participants[currentTurn];
         IParticipant target = _participants[previousTurn];
-        bool hit = false;
-        var dice = new Dice();
-        if (attacker.GetStats().Accuracy + dice.Roll() >= target.GetStats().Evasion)
+        int newDamage = 0;
+        var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
+        Debug.Log(target);
+        yield return new WaitUntil(() => dice.diceLanded);
+        if (attacker.GetStats().Strength + dice.sideLandedOn >= target.GetStats().Defense)
         {
-            hit = true;
+            newDamage = attacker.GetStats().Strength + dice.sideLandedOn - target.GetStats().Defense;
         }
-        return hit;
+        Debug.Log(dice.sideLandedOn);
+        Debug.Log(newDamage);
+        target.Damage(newDamage);
+    }
+
+    private IEnumerator TryToHitIEnumerator()
+    {
+        IParticipant attacker = _participants[currentTurn];
+        IParticipant target = _participants[previousTurn];
+        var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
+        yield return new WaitUntil(() => dice.diceLanded);
+        if (attacker.GetStats().Accuracy + dice.sideLandedOn >= target.GetStats().Evasion)
+        {
+            StartCoroutine(AttackIEnumerator());
+            Debug.Log("Hit");
+        }
+    }
+
+    public void Attack()
+    {
+        StartCoroutine(TryToHitIEnumerator());
     }
 
     public void NextTurn()
@@ -81,24 +93,13 @@ public class Combat : MonoBehaviour
 
 }
 
-[Serializable]
-public class Dice
-{
-
-    int maxValue;
-    int minValue;
-
-    public int Roll()
-    {
-        return Random.Range(minValue, maxValue) + 1;
-    }
-}
-
 public interface IParticipant
 {
     void StartTurn(Combat combat);
 
     void EndTurn(Combat combat);
+
+    void HealthHitZero();
 
     void Damage(int damage);
 

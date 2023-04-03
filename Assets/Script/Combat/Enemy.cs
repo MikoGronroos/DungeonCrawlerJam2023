@@ -8,6 +8,11 @@ public class Enemy : MonoBehaviour, IParticipant
 
     public void Damage(int damage)
     {
+        currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth - damage, 0, currentStats.MaxHealth);
+        if (currentStats.CurrentHealth <= 0)
+        {
+            HealthHitZero();
+        }
     }
 
     public void EndTurn(Combat combat)
@@ -19,29 +24,12 @@ public class Enemy : MonoBehaviour, IParticipant
         return currentStats;
     }
 
+    public void HealthHitZero()
+    {
+    }
+
     public void StartTurn(Combat combat)
     {
-        StartCoroutine(Turn(combat));
+        combat.Attack();
     }
-
-    private IEnumerator Turn(Combat combat)
-    {
-        yield return new WaitForSeconds(5);
-        if (combat.TryToHit())
-        {
-            if (combat.Attack())
-            {
-                combat.NextTurn();
-            }
-            else
-            {
-                combat.NextTurn();
-            }
-        }
-        else
-        {
-            combat.NextTurn();
-        }
-    }
-
 }
