@@ -57,10 +57,6 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), Time.deltaTime * transitionRotationSpeed);
             }
         }
-        else
-        {
-            targetGridPos = prevTargetGridPos;
-        }
     }
 
     private bool canMove()

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Combat : MonoBehaviour
 {
@@ -22,15 +21,13 @@ public class Combat : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)) StartCombat(enemy, player);
+        if (Input.GetKeyDown(KeyCode.G)) StartCombat(enemy);
     }
 
-    public void StartCombat(params IParticipant[] values)
+    public void StartCombat(Enemy enemy)
     {
-        foreach (var item in values)
-        {
-            _participants.Add(item);
-        }
+        _participants.Add(enemy);
+        _participants.Add(player);
         isInCombat = true;
         currentTurn = 0;
         previousTurn = 1;
