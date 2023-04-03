@@ -18,6 +18,8 @@ public class Combat : MonoBehaviour
     private bool isInCombat = false;
     private List<IParticipant> _participants = new List<IParticipant>();
 
+    private List<GameObject> dices = new List<GameObject>();
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.G)) StartCombat(enemy, player);
@@ -37,49 +39,71 @@ public class Combat : MonoBehaviour
 
     public void EndCombat()
     {
+        StopAllCoroutines();
+        foreach (var item in _participants)
+        {
+            item.CombatEnded(this);
+        }
+        _participants = new List<IParticipant>();
+        CleanUpDices();
         isInCombat = false;
     }
 
-    private IEnumerator AttackIEnumerator()
+    private IEnumerator AttackIEnumerator(Action<bool> callback)
     {
         IParticipant attacker = _participants[currentTurn];
         IParticipant target = _participants[previousTurn];
         int newDamage = 0;
         var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
+        dices.Add(dice.gameObject);
         Debug.Log(target);
         yield return new WaitUntil(() => dice.diceLanded);
         if (attacker.GetStats().Strength + dice.sideLandedOn >= target.GetStats().Defense)
         {
-            newDamage = attacker.GetStats().Strength + dice.sideLandedOn - target.GetStats().Defense;
+            newDamage = 1;
+            if (!target.Damage(this, newDamage))
+            {
+                callback?.Invoke(true);
+            }
+        }
+        else
+        {
+            callback?.Invoke(false);
         }
         Debug.Log(dice.sideLandedOn);
         Debug.Log(newDamage);
-        target.Damage(newDamage);
     }
 
-    private IEnumerator TryToHitIEnumerator()
+    private IEnumerator TryToHitIEnumerator(Action<bool> callback)
     {
         IParticipant attacker = _participants[currentTurn];
         IParticipant target = _participants[previousTurn];
         var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
+        dices.Add(dice.gameObject);
         yield return new WaitUntil(() => dice.diceLanded);
         if (attacker.GetStats().Accuracy + dice.sideLandedOn >= target.GetStats().Evasion)
         {
-            StartCoroutine(AttackIEnumerator());
+            StartCoroutine(AttackIEnumerator(callback));
             Debug.Log("Hit");
+        }
+        else
+        {
+            callback?.Invoke(false);
         }
     }
 
-    public void Attack()
+    public void Attack(Action<bool> attackFinishedCallback)
     {
-        StartCoroutine(TryToHitIEnumerator());
+        StartCoroutine(TryToHitIEnumerator(attackFinishedCallback));
     }
 
     public void NextTurn()
     {
+        CleanUpDices();
+
         _participants[currentTurn].EndTurn(this);
         previousTurn = currentTurn;
-        if (currentTurn >= _participants.Count)
+        if (currentTurn >= _participants.Count - 1)
         {
             currentTurn = 0;
         }
@@ -90,6 +114,19 @@ public class Combat : MonoBehaviour
         _participants[currentTurn].StartTurn(this);
     }
 
+    private void CleanUpDices()
+    {
+        if (dices.Count > 0)
+        {
+            for (int i = dices.Count - 1; i >= 0; i--)
+            {
+                Destroy(dices[i]);
+            }
+
+            dices.Clear();
+        }
+    }
+
 }
 
 public interface IParticipant
@@ -98,9 +135,11 @@ public interface IParticipant
 
     void EndTurn(Combat combat);
 
-    void HealthHitZero();
+    void CombatEnded(Combat combat);
 
-    void Damage(int damage);
+    void HealthHitZero(Combat combat);
+
+    bool Damage(Combat combat, int damage);
 
     Stats GetStats();
 

@@ -8,24 +8,33 @@ public class Player : MonoBehaviour, IParticipant
     [SerializeField] private Stats currentStats;
 
     [SerializeField] private GameObject turnPanel;
-    [SerializeField] private Button nextTurnButton;
+    [SerializeField] private Button attackButton;
 
-    public void Damage(int damage)
+    private bool _dead;
+
+    private void Start()
+    {
+        currentStats.CurrentHealth = currentStats.MaxHealth;
+    }
+
+    public bool Damage(Combat combat, int damage)
     {
         currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth - damage, 0, currentStats.MaxHealth);
         if (currentStats.CurrentHealth <= 0)
         {
-            HealthHitZero();
+            HealthHitZero(combat);
+            _dead = true;
         }
+        return _dead;
     }
 
-    public void HealthHitZero()
+    public void HealthHitZero(Combat combat)
     {
     }
 
     public void EndTurn(Combat combat)
     {
-        nextTurnButton.onClick.RemoveAllListeners();
+        attackButton.onClick.RemoveAllListeners();
         turnPanel.SetActive(false);
     }
 
@@ -37,9 +46,30 @@ public class Player : MonoBehaviour, IParticipant
     public void StartTurn(Combat combat)
     {
         turnPanel.SetActive(true);
-        nextTurnButton.onClick.AddListener(() =>
+        attackButton.onClick.AddListener(() =>
         {
-            combat.NextTurn();
+            combat.Attack((bool state) =>
+            {
+                AttackFinished(state, combat);
+            });
         });
+    }
+
+    private void AttackFinished(bool state, Combat combat)
+    {
+        if (state) // Attack was succesful
+        {
+
+        }
+        else //Attack was not succesful
+        {
+
+        }
+        combat.NextTurn();
+    }
+
+    public void CombatEnded(Combat combat)
+    {
+        EndTurn(combat);
     }
 }
