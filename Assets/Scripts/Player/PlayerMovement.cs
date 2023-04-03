@@ -1,17 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
 
     public bool smoothTransition = false;
     public float transitionSpeed = 10f;
     public float transitionRotationSpeed = 500f;
 
-    Vector3 targetGridPos;
-    Vector3 prevTargetGridPos;
-    Vector3 targetRotation;
+    public Vector3 targetGridPos;
+    public Vector3 prevTargetGridPos;
+    public Vector3 targetRotation;
 
     [SerializeField] private int movementMultiplyer;
 
@@ -28,7 +29,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D)) RotateRight();
         if (Input.GetKeyDown(KeyCode.A)) RotateLeft();
 
-        Move();
+        if (canMove())
+        {
+            Move();
+        }
     }
 
     private void Move()
@@ -52,12 +56,26 @@ public class PlayerController : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), Time.deltaTime * transitionRotationSpeed);
             }
-
         }
         else
         {
             targetGridPos = prevTargetGridPos;
         }
+    }
+
+    private bool canMove()
+    {
+
+        if (Physics.Raycast(transform.position, (new Vector3(targetGridPos.x, transform.position.y, targetGridPos.z) - transform.position).normalized, Vector3.Distance(targetGridPos, transform.position)))
+        {
+            targetGridPos = prevTargetGridPos;
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        
     }
 
     public void RotateLeft() { if (AtRest) targetRotation -= Vector3.up * 90f; }
@@ -77,5 +95,4 @@ public class PlayerController : MonoBehaviour
                 return false;
         }
     }
-
 }
