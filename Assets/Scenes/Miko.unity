@@ -483,6 +483,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2025766868}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartCombat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Combat, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8207554372524835504}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Enemy, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6013252229474476772, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1053,7 +1085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &462870824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1127,7 +1159,7 @@ GameObject:
   - component: {fileID: 505161022}
   - component: {fileID: 505161023}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Player
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1232,13 +1264,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStats:
     Strength: 0
-    Evasion: 0
+    Evasion: 4
     Accuracy: 0
     Defense: 0
-    MaxHealth: 0
+    MaxHealth: 3
     CurrentHealth: 0
   turnPanel: {fileID: 462870823}
-  nextTurnButton: {fileID: 0}
+  attackButton: {fileID: 25099673}
 --- !u!1001 &611665550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1394,6 +1426,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &942503336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 942503337}
+  - component: {fileID: 942503338}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &942503337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942503336}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &942503338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942503336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d68213b5e1c6b4c9f23f8c1afd0f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &974477717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2330,7 +2406,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1828648644}
   - component: {fileID: 1828648643}
-  - component: {fileID: 1828648642}
   m_Layer: 0
   m_Name: DiceCam
   m_TagString: Untagged
@@ -2338,14 +2413,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1828648642
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828648641}
-  m_Enabled: 1
 --- !u!20 &1828648643
 Camera:
   m_ObjectHideFlags: 0
@@ -2371,7 +2438,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 55
+  field of view: 42.5
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2699,6 +2766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2369449eefa528b4c8963085acef2d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionLength: 6
 --- !u!1 &2120967320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2989,7 +3057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8207554372524835501}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.25, y: 4.75, z: 12}
+  m_LocalPosition: {x: 0.25, y: 3, z: 12}
   m_LocalScale: {x: 0.4, y: 1, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3050,7 +3118,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e144ddd63c6eb2d40adf4b97211238c4, type: 2}
+  - {fileID: 2100000, guid: 0e11c2b1adbb8d446b3a74a96a2516ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3085,9 +3153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStats:
-    Strength: 2
-    Evasion: 2
-    Accuracy: 2
-    Defense: 2
-    MaxHealth: 0
+    Strength: 0
+    Evasion: 0
+    Accuracy: 0
+    Defense: 0
+    MaxHealth: 3
     CurrentHealth: 0

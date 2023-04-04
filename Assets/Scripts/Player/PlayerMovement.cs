@@ -57,10 +57,6 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), Time.deltaTime * transitionRotationSpeed);
             }
         }
-        else
-        {
-            targetGridPos = prevTargetGridPos;
-        }
     }
 
     private bool canMove()
@@ -80,8 +76,25 @@ public class PlayerMovement : MonoBehaviour
 
     public void RotateLeft() { if (AtRest) targetRotation -= Vector3.up * 90f; }
     public void RotateRight() { if (AtRest) targetRotation += Vector3.up * 90f; }
-    public void MoveForward() { if (AtRest) targetGridPos += transform.forward * movementMultiplyer; }
-    public void MoveBackward() { if (AtRest) targetGridPos -= transform.forward * movementMultiplyer; }
+    public void MoveForward() { if (AtRest) { 
+            targetGridPos += transform.forward * movementMultiplyer;
+            CheckTile(targetGridPos);
+        } }
+
+    private void CheckTile(Vector3 targetGridPos)
+    {
+        int x = (int)targetGridPos.x;
+        int z = (int)targetGridPos.z;
+        if (Grid.GridCells.ContainsKey(new Vector2(x, z)))
+        {
+            Grid.GridCells[new Vector2(x, z)].OnStepped();
+        }
+    }
+
+    public void MoveBackward() { if (AtRest) { 
+            targetGridPos -= transform.forward * movementMultiplyer;
+            CheckTile(targetGridPos);
+        } }
     public void MoveLeft() { if (AtRest) targetGridPos -= transform.right; }
     public void MoveRight() { if (AtRest) targetGridPos += transform.right; }
 
