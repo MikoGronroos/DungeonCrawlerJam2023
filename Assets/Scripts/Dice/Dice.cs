@@ -29,8 +29,19 @@ public class Dice : MonoBehaviour
         //Check dice side when still
         if(diceRb.velocity == Vector3.zero && !diceLanded)
         {
+            if (!diceLanded)
+            {
+                Time.timeScale = 1.0f;
+            }
             diceLanded = true;
             sideLandedOn = checkDiceSide();
+        }
+        else
+        {
+            if (!diceLanded)
+            {
+                Time.timeScale = 3f;
+            }
         }
     }
 
