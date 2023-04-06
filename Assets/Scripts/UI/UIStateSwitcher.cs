@@ -7,20 +7,16 @@ using UnityEngine.UI;
 
 public class UIStateSwitcher : MonoBehaviour
 {
-    public UnityEvent<UIState> onUIStateChanged;
-
-    public UIState initialState;
+    [SerializeField] private UIEventChannel uiEventChannel;
     
     public Button startGameButton;
 
+    [Tooltip("DEBUG")]
+    public UIState currentUIState;
+    
     private void OnEnable()
     {
         startGameButton.onClick.AddListener(OnStartGameButtonClick);
-    }
-
-    private void Start()
-    {
-        ChangeUIState(initialState);
     }
     
     private void OnDisable()
@@ -35,7 +31,8 @@ public class UIStateSwitcher : MonoBehaviour
 
     private void ChangeUIState(UIState newState)
     {
-        onUIStateChanged?.Invoke(newState);
+        currentUIState = newState;
+        uiEventChannel.onUIStateChanged?.Invoke(newState);
     }
     
 }
