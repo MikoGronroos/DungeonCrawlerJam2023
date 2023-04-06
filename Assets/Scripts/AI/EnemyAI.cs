@@ -29,12 +29,12 @@ public class EnemyAI : MonoBehaviour
             Wander();
             if (checkForPlayer())
             {
-                //start combat
+                InitiateCombat();
             }
         }
         else
         {
-            //start combat
+            InitiateCombat();
         }
     }
 
@@ -130,6 +130,11 @@ public class EnemyAI : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private void InitiateCombat()
+    {
+
     }
 
 }

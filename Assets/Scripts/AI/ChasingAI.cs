@@ -37,11 +37,11 @@ public class ChasingAI : MonoBehaviour
                 Wander();
                 if (checkForPlayer())
                 {
-                    //start combat
+                    InitiateCombat();
                 }
             }else
             {
-                //start combat
+                InitiateCombat();
             }
             
         }else if(!findPlayerRaycast() && chasing)
@@ -51,12 +51,12 @@ public class ChasingAI : MonoBehaviour
                 Chase(); // continue to last known position
                 if (checkForPlayer())
                 {
-                    //start combat
+                    InitiateCombat();
                 }
             }
             else
             {
-                //start combat
+                InitiateCombat();
             }
         }
         else
@@ -68,12 +68,12 @@ public class ChasingAI : MonoBehaviour
                 Chase();
                 if (checkForPlayer())
                 {
-                    //start combat
+                    InitiateCombat();
                 }
             }
             else
             {
-                //start combat
+                InitiateCombat();
             }
         }
     }
@@ -208,6 +208,11 @@ public class ChasingAI : MonoBehaviour
             }
         }
         return false;
+    }
+
+    private void InitiateCombat()
+    {
+
     }
 
 }
