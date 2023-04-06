@@ -13,6 +13,8 @@ TagManager:
   - UI
   - DiceGround
   - Walls
+  - Enemy
+  - Player
   - Dice
   - 
   - 
