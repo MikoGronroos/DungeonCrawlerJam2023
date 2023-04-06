@@ -37,19 +37,22 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X)) SetupSlots();
     }
 
-    public void AddItem(Item item)
+    public bool TryToAddItem(Item item)
     {
+        bool addedItem = false;
         var index = FindIndexOfEmptySlot();
 
         if (index <= inventoryMaxSize - 1)
         {
             inventoryItems[index] = item;
+            addedItem = true;
         }
         else
         {
             Debug.Log("Couldn't find an empty slot.");
         }
         SetupSlots();
+        return addedItem;
     }
 
     public bool HasItem(Item item)

@@ -7,6 +7,8 @@ public class GridCell : MonoBehaviour
 
     [SerializeField] private UnityEvent onSteppedEvent;
     [SerializeField] private UnityEvent onSteppedFireOnceEvent;
+    [SerializeField] private UnityEvent onSteppedPickupEvent;
+    [SerializeField] private Item gridCellItem;
 
     private bool hasBeenStepped = false;
 
@@ -20,10 +22,14 @@ public class GridCell : MonoBehaviour
     {
         if (!hasBeenStepped)
         {
-            onSteppedFireOnceEvent.Invoke();
+            onSteppedFireOnceEvent?.Invoke();
+            if (Inventory.Instance.TryToAddItem(gridCellItem))
+            {
+                onSteppedPickupEvent?.Invoke();
+            }
         }
         hasBeenStepped = true;
-        onSteppedEvent.Invoke();
+        onSteppedEvent?.Invoke();
     }
 
 }
