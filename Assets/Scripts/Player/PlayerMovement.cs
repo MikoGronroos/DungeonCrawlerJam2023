@@ -24,18 +24,29 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private int movementMultiplyer;
 
+    private bool _rotateRightIsBuffered;
+    private bool _rotateLeftIsBuffered;
+
     private void Start()
     {
         targetGridPos = Vector3Int.RoundToInt(transform.position);
     }
-
+    
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.W)) MoveForward();
         if (Input.GetKeyDown(KeyCode.S)) MoveBackward();
-        if (Input.GetKeyDown(KeyCode.D)) RotateRight();
-        if (Input.GetKeyDown(KeyCode.A)) RotateLeft();
+        
+        if (AtRest) // Rotate
+        {
+            if (Input.GetKeyDown(KeyCode.D)) RotateRight();
+            if (Input.GetKeyDown(KeyCode.A)) RotateLeft();
+        }
+        else // Buffer input when moving
+        {
+            if (!_rotateRightIsBuffered && Input.GetKeyDown(KeyCode.D)) _rotateRightIsBuffered = true;
+            if (!_rotateLeftIsBuffered && Input.GetKeyDown(KeyCode.A)) _rotateLeftIsBuffered = true;
+        }
 
         if (canMove())
         {
@@ -68,15 +79,30 @@ public class PlayerMovement : MonoBehaviour
             if((Vector3.Distance(transform.position, targetGridPos) < 0.02f) && !playerStill) //Player has now reached the goal so call the OnMoved function and set player status to still
             {
                 playerStill = true;
-                OnMoved();
-
-            }else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.02f)) //If player has not reached the goal set playerStill to false
+                OnMoved?.Invoke();
+                RotateIfBuffered();
+            }
+            else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.02f)) //If player has not reached the goal set playerStill to false
             {
                 playerStill = false;
             }
         }
     }
 
+
+    private void RotateIfBuffered()
+    {
+        if (_rotateRightIsBuffered)
+        {
+            RotateRight();
+            _rotateRightIsBuffered = false;
+        }
+        if (_rotateLeftIsBuffered)
+        {
+            RotateLeft();
+            _rotateLeftIsBuffered = false;
+        }
+    }
 
 
     private bool canMove()
