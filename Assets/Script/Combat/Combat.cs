@@ -7,6 +7,7 @@ public class Combat : MonoBehaviour
 {
 
     [SerializeField] private Player player;
+    [SerializeField] private PlayerMovement playerMovement;
 
     [SerializeField] private Dice dicePrefab;
     [SerializeField] private Transform diceSpawnPos;
@@ -36,6 +37,7 @@ public class Combat : MonoBehaviour
 
     public void StartCombat(IParticipant enemy)
     {
+        playerMovement.CanMove = false;
         _participants.Add(enemy);
         _participants.Add(player);
         isInCombat = true;
@@ -54,6 +56,7 @@ public class Combat : MonoBehaviour
         _participants = new List<IParticipant>();
         CleanUpDices();
         isInCombat = false;
+        playerMovement.CanMove = false;
     }
 
     private IEnumerator AttackIEnumerator(Action<bool> callback)

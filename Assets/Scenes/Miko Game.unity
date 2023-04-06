@@ -7422,6 +7422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 417608719}
+  playerMovement: {fileID: 417608714}
   dicePrefab: {fileID: 874159126, guid: 3a83d1b770fe0e34ea0ec9f13369f5fd, type: 3}
   diceSpawnPos: {fileID: 1019213576}
 --- !u!1 &1336190459

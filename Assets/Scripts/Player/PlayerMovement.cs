@@ -77,8 +77,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-
     private bool canMove()
     {
 
