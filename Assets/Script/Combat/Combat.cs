@@ -56,7 +56,7 @@ public class Combat : MonoBehaviour
         _participants = new List<IParticipant>();
         CleanUpDices();
         isInCombat = false;
-        playerMovement.CanMove = false;
+        playerMovement.CanMove = true;
     }
 
     private IEnumerator AttackIEnumerator(Action<bool> callback)
