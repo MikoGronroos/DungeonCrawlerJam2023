@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    [SerializeField] LayerMask playerLayer;
+    [SerializeField] LayerMask wallLayer;
+
     [SerializeField] LayerMask movementBlockLayer;
 
     [SerializeField] List<Vector3> availableDirections = new List<Vector3>();
@@ -20,7 +23,19 @@ public class EnemyAI : MonoBehaviour
 
     void RunAI()
     {
-         Wander();
+        //If player is not next to enemy move and check again and if true start combat. Otherwise start combat
+        if (!checkForPlayer())
+        {
+            Wander();
+            if (checkForPlayer())
+            {
+                //start combat
+            }
+        }
+        else
+        {
+            //start combat
+        }
     }
 
     void Wander()
@@ -85,6 +100,36 @@ public class EnemyAI : MonoBehaviour
             listToShuffle[i] = value;
         }
         return listToShuffle;
+    }
+
+    private bool checkForPlayer()
+    {
+
+        Ray forward = new Ray(transform.position, Vector3.forward);
+        Ray back = new Ray(transform.position, Vector3.back);
+        Ray left = new Ray(transform.position, Vector3.left);
+        Ray right = new Ray(transform.position, Vector3.right);
+
+        List<Ray> rays = new List<Ray>();
+        rays.Add(forward);
+        rays.Add(back);
+        rays.Add(left);
+        rays.Add(right);
+        RaycastHit raycastHit;
+        Debug.Log("Looking for player");
+        foreach (Ray ray in rays)
+        {
+            if (!Physics.Raycast(ray, 1, wallLayer))
+            {
+                if (Physics.Raycast(ray.origin, ray.direction, out raycastHit, 1.2f, playerLayer))
+                {
+                    Debug.Log("Player found: " + raycastHit.collider.gameObject.name + " " + raycastHit.point);
+
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }

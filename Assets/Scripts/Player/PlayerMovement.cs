@@ -65,17 +65,19 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), Time.deltaTime * transitionRotationSpeed);
             }
 
-            //Fire OnMoved Event
-            if((Vector3.Distance(transform.position, targetGridPos) < 0.05) && !playerStill) //Player has now reached the goal so call the OnMoved function and set player status to still
+            if((Vector3.Distance(transform.position, targetGridPos) < 0.02f) && !playerStill) //Player has now reached the goal so call the OnMoved function and set player status to still
             {
                 playerStill = true;
                 OnMoved();
-            }else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.05)) //If player has not reached the goal set playerStill to false
+
+            }else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.02f)) //If player has not reached the goal set playerStill to false
             {
                 playerStill = false;
             }
         }
     }
+
+
 
     private bool canMove()
     {
@@ -120,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
     {
         get
         {
-            if ((Vector3.Distance(transform.position, targetGridPos) < 0.05) && (Vector3.Distance(transform.eulerAngles, targetRotation) < 0.05f))
+            if ((Vector3.Distance(transform.position, targetGridPos) < 0.02) && (Vector3.Distance(transform.eulerAngles, targetRotation) < 0.02f))
                 return true;
             else
                 return false;
