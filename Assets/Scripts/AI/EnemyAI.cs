@@ -131,7 +131,7 @@ public class EnemyAI : MonoBehaviour
 
     private void InitiateCombat()
     {
-
+        Combat.Instance.StartCombat(GetComponent<IParticipant>());
     }
 
 }

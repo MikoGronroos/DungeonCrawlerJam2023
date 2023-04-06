@@ -6,7 +6,6 @@ using UnityEngine;
 public class Combat : MonoBehaviour
 {
 
-    [SerializeField] private Enemy enemy;
     [SerializeField] private Player player;
 
     [SerializeField] private Dice dicePrefab;
@@ -19,12 +18,23 @@ public class Combat : MonoBehaviour
 
     private List<GameObject> dices = new List<GameObject>();
 
-    private void Update()
+    #region Singleton
+
+    private static Combat instance;
+
+    public static Combat Instance
     {
-        if (Input.GetKeyDown(KeyCode.G)) StartCombat(enemy);
+        get { return instance; }
     }
 
-    public void StartCombat(Enemy enemy)
+    #endregion
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public void StartCombat(IParticipant enemy)
     {
         _participants.Add(enemy);
         _participants.Add(player);
@@ -71,6 +81,7 @@ public class Combat : MonoBehaviour
         Debug.Log(newDamage);
     }
 
+    /*
     private IEnumerator TryToHitIEnumerator(Action<bool> callback)
     {
         IParticipant attacker = _participants[currentTurn];
@@ -89,9 +100,11 @@ public class Combat : MonoBehaviour
         }
     }
 
+    */
+
     public void Attack(Action<bool> attackFinishedCallback)
     {
-        StartCoroutine(TryToHitIEnumerator(attackFinishedCallback));
+        StartCoroutine(AttackIEnumerator(attackFinishedCallback));
     }
 
     public void NextTurn()
@@ -146,8 +159,6 @@ public interface IParticipant
 public class Stats
 {
     public int Strength = 0;
-    public int Evasion = 0;
-    public int Accuracy = 0;
     public int Defense = 0;
     public int MaxHealth = 0;
     public int CurrentHealth = 0;
