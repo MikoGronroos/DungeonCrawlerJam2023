@@ -34,7 +34,33 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X)) SetupSlots();
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ConsumeItem(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ConsumeItem(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ConsumeItem(2);
+        }
+    }
+
+    private void ConsumeItem(int index)
+    {
+
+        if (inventoryItems[index] == null)
+        {
+            return;
+        }
+
+        if (inventoryItems[index].IsConsumable)
+        {
+            Player.Instance.AddHealth((inventoryItems[index] as ItemPotion).HealthAddon);
+            RemoveItem(inventoryItems[index]);
+        }
     }
 
     public bool TryToAddItem(Item item)
@@ -141,6 +167,7 @@ public abstract class Item : ScriptableObject
     public string ItemName;
     public string ItemId;
     public Sprite ItemIcon;
+    public bool IsConsumable;
 
     [ContextMenu("Generate new id")]
     public void GenerateId() => ItemId = Guid.NewGuid().ToString();
