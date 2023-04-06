@@ -4,12 +4,19 @@ using UnityEngine.Events;
 [CreateAssetMenu]
 public class AudioEventChannel : ScriptableObject
 {
-    public UnityEvent onToggleAudio = new UnityEvent();
-    public UnityEvent<bool> onAudioStateChanged = new UnityEvent<bool>();
+    public UnityEvent onToggleSFX = new();
+    public UnityEvent onToggleMusic = new();
+    public UnityEvent<bool> onSFXStateChanged = new();
+    public UnityEvent<bool> onMusicStateChanged = new();
 
-
-    public void ToggleAudio()
+    public void ToggleSFX()
     {
-        onToggleAudio?.Invoke();
+        onToggleSFX?.Invoke();
     }
+
+    public void ToggleMusic()
+    {
+        onToggleMusic?.Invoke();
+    }
+
 }

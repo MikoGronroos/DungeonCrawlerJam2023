@@ -1,37 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class AudioSettings : MonoBehaviour
 {
     [SerializeField] private AudioEventChannel audioEventChannel;
-    [SerializeField] private AudioMixerGroup master;
+    [SerializeField] private AudioMixer mixer;
     [SerializeField] private float maxVolume;
+    
+    private bool _isMusicEnabled;
+    private bool _isSFXEnabled;
 
-    private bool _isAudioEnabled;
     private void OnEnable()
     {
-        audioEventChannel.onToggleAudio.AddListener(ToggleSound);
+        audioEventChannel.onToggleSFX.AddListener(ToggleSFX);
+        audioEventChannel.onToggleMusic.AddListener(ToggleMusic);
     }
 
     private void OnDisable()
     {
-        audioEventChannel.onToggleAudio.RemoveListener(ToggleSound);
+        audioEventChannel.onToggleSFX.RemoveListener(ToggleSFX);
+        audioEventChannel.onToggleMusic.RemoveListener(ToggleMusic);
     }
 
-    private void Start()
+    private void ToggleSFX()
     {
-        ToggleSound();
+        _isSFXEnabled = !_isSFXEnabled;
+        mixer.SetFloat("SFXVolume", _isSFXEnabled ? maxVolume : -80f);
+        audioEventChannel.onSFXStateChanged?.Invoke(_isSFXEnabled);
     }
-
-    public void ToggleSound()
+    
+    private void ToggleMusic()
     {
-        _isAudioEnabled = !_isAudioEnabled;
-        audioEventChannel.onAudioStateChanged?.Invoke(_isAudioEnabled);
-
-        master.audioMixer.SetFloat("Volume", _isAudioEnabled ? maxVolume : -80f);
-
+        _isMusicEnabled = !_isMusicEnabled;
+        mixer.SetFloat("BGVolume", _isMusicEnabled ? maxVolume : -80f);
+        audioEventChannel.onMusicStateChanged?.Invoke(_isMusicEnabled);
     }
-
 }

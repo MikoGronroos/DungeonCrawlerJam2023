@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 prevTargetGridPos;
     public Vector3 targetRotation;
 
+    [Tooltip("This variable is controlled from input state controller")]
+    public bool CanMove { get; set; }
+    
     [SerializeField] private int movementMultiplyer;
 
     private void Start()
@@ -37,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if (true)
+        if (CanMove)
         {
             prevTargetGridPos = targetGridPos;
 

@@ -1,13 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-    public UIState initialUIState;
+    public AudioEventChannel audioEventChannel;
     public UIEventChannel UIEventChannel;
+    public UIState initialUIState;
+   
     private void Start()
     {
         BootGame();
@@ -16,5 +14,7 @@ public class GameManager : MonoBehaviour
     private void BootGame()
     {
         UIEventChannel.onUIStateChanged?.Invoke(initialUIState);
+        audioEventChannel.ToggleSFX();
+        audioEventChannel.ToggleMusic();
     }
 }
