@@ -12,6 +12,22 @@ public class Player : MonoBehaviour, IParticipant
 
     private bool _dead;
 
+    #region Singleton
+
+    private static Player instance;
+
+    public static Player Instance
+    {
+        get { return instance; }
+    }
+
+    #endregion
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         currentStats.CurrentHealth = currentStats.MaxHealth;
@@ -26,6 +42,11 @@ public class Player : MonoBehaviour, IParticipant
             _dead = true;
         }
         return _dead;
+    }
+
+    public void AddHealth(int health)
+    {
+        currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth + health, 0, currentStats.MaxHealth);
     }
 
     public void HealthHitZero(Combat combat)
