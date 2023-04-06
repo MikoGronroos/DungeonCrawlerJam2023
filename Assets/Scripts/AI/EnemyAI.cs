@@ -116,15 +116,12 @@ public class EnemyAI : MonoBehaviour
         rays.Add(left);
         rays.Add(right);
         RaycastHit raycastHit;
-        Debug.Log("Looking for player");
         foreach (Ray ray in rays)
         {
             if (!Physics.Raycast(ray, 1, wallLayer))
             {
                 if (Physics.Raycast(ray.origin, ray.direction, out raycastHit, 1.2f, playerLayer))
                 {
-                    Debug.Log("Player found: " + raycastHit.collider.gameObject.name + " " + raycastHit.point);
-
                     return true;
                 }
             }

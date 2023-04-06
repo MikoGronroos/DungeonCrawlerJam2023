@@ -201,8 +201,6 @@ public class ChasingAI : MonoBehaviour
             {
                 if (Physics.Raycast(ray.origin, ray.direction, out raycastHit, 1.2f, playerLayer))
                 {
-                    Debug.Log("Player found: " + raycastHit.collider.gameObject.name + " " + raycastHit.point);
-
                     return true;
                 }
             }
