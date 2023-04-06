@@ -11,6 +11,7 @@ public class Player : MonoBehaviour, IParticipant
     [SerializeField] private Button attackButton;
 
     private bool _dead;
+    private bool _canClickAttack;
 
     #region Singleton
 
@@ -67,12 +68,17 @@ public class Player : MonoBehaviour, IParticipant
     public void StartTurn(Combat combat)
     {
         turnPanel.SetActive(true);
+        _canClickAttack = true;
         attackButton.onClick.AddListener(() =>
         {
-            combat.Attack((bool state) =>
+            if (_canClickAttack)
             {
-                AttackFinished(state, combat);
-            });
+                combat.Attack((bool state) =>
+                {
+                    AttackFinished(state, combat);
+                });
+            }
+            _canClickAttack = false;
         });
     }
 
