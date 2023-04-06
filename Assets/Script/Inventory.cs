@@ -41,7 +41,7 @@ public class Inventory : MonoBehaviour
     {
         var index = FindIndexOfEmptySlot();
 
-        if (index <= inventoryMaxSize)
+        if (index <= inventoryMaxSize - 1)
         {
             inventoryItems[index] = item;
         }
@@ -49,7 +49,7 @@ public class Inventory : MonoBehaviour
         {
             Debug.Log("Couldn't find an empty slot.");
         }
-
+        SetupSlots();
     }
 
     public bool HasItem(Item item)
@@ -102,13 +102,14 @@ public class Inventory : MonoBehaviour
     {
         int index = 0;
         bool noneIsEmpty = true;
-        for (index = 0; index < inventoryItems.Length; index++)
+        foreach (var item in inventoryItems)
         {
-            if (inventoryItems[index] != null)
+            if (inventoryItems[index] == null)
             {
                 noneIsEmpty = false;
                 break;
             }
+            index++;
         }
         if (noneIsEmpty)
         {

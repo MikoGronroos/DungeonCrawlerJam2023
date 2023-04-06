@@ -15,6 +15,7 @@ public class GridCell : MonoBehaviour
 
     public void OnStepped()
     {
+        Debug.Log("xdd");
         onSteppedEvent.Invoke();
     }
 
