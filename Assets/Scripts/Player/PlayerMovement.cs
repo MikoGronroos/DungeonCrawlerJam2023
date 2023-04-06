@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Moved event
+    public delegate void PlayerMoved();
+    public static event PlayerMoved OnMoved;
+
+    public bool playerStill;
 
     public bool smoothTransition = false;
     public float transitionSpeed = 10f;
@@ -58,6 +63,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), Time.deltaTime * transitionRotationSpeed);
+            }
+
+            //Fire OnMoved Event
+            if((Vector3.Distance(transform.position, targetGridPos) < 0.05) && !playerStill) //Player has now reached the goal so call the OnMoved function and set player status to still
+            {
+                playerStill = true;
+                OnMoved();
+            }else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.05)) //If player has not reached the goal set playerStill to false
+            {
+                playerStill = false;
             }
         }
     }
