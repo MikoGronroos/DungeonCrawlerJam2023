@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 targetRotation;
 
     [Tooltip("This variable is controlled from input state controller")]
-    public bool CanMove { get; set; }
+    [field: SerializeField] public bool CanMove { get; set; }
     
     [SerializeField] private int movementMultiplyer;
 
@@ -103,8 +103,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckTile(Vector3 targetGridPos)
     {
-        int x = (int)targetGridPos.x;
-        int z = (int)targetGridPos.z;
+        int x = (int)Mathf.Ceil(targetGridPos.x);
+        int z = (int)Mathf.Ceil(targetGridPos.z);
+        Debug.Log(x + " " + z);
         if (Grid.GridCells.ContainsKey(new Vector2(x, z)))
         {
             Grid.GridCells[new Vector2(x, z)].OnStepped();
