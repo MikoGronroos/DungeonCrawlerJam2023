@@ -132,7 +132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
       propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
       propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -167,6 +171,22 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2120967322}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
       propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Inventory, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -179,12 +199,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3529c5da170156e4d912ba2e7a138b7b, type: 2}
     - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Inventory, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 3529c5da170156e4d912ba2e7a138b7b, type: 2}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
       propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: Item, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
       propertyPath: onSteppedEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376184538698946588, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
+      propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Item, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6013252229474476772, guid: 846c74c93c824014fa0f85593cc3219b, type: 3}
       propertyPath: m_RootOrder
@@ -1311,7 +1343,7 @@ MonoBehaviour:
   targetGridPos: {x: 0, y: 0, z: 0}
   prevTargetGridPos: {x: 0, y: 0, z: 0}
   targetRotation: {x: 0, y: 0, z: 0}
-  <CanMove>k__BackingField: 0
+  <CanMove>k__BackingField: 1
   movementMultiplyer: 6
 --- !u!114 &505161023
 MonoBehaviour:

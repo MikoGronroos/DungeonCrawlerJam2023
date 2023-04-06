@@ -6,6 +6,9 @@ public class GridCell : MonoBehaviour
     public int x, z;
 
     [SerializeField] private UnityEvent onSteppedEvent;
+    [SerializeField] private UnityEvent onSteppedFireOnceEvent;
+
+    private bool hasBeenStepped = false;
 
     private void Awake()
     {
@@ -15,7 +18,11 @@ public class GridCell : MonoBehaviour
 
     public void OnStepped()
     {
-        Debug.Log("xdd");
+        if (!hasBeenStepped)
+        {
+            onSteppedFireOnceEvent.Invoke();
+        }
+        hasBeenStepped = true;
         onSteppedEvent.Invoke();
     }
 
