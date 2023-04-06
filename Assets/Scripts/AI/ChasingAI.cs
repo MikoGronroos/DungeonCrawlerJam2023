@@ -212,7 +212,7 @@ public class ChasingAI : MonoBehaviour
 
     private void InitiateCombat()
     {
-
+        Combat.Instance.StartCombat(GetComponent<IParticipant>());
     }
 
 }
