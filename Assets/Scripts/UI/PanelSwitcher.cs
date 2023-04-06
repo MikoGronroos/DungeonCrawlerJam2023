@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PanelSwitcher : MonoBehaviour
 {
+    [SerializeField] private UIEventChannel uiEventChannel;
+
     [Tooltip("Canvas objects that can be disabled when switching to a new canvas")]
     [SerializeField] private List<UIPanel> panels;
-
-    [SerializeField] private UIEventChannel uiEventChannel;
 
     private void OnEnable()
     {
