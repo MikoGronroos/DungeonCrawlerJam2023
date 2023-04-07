@@ -10,6 +10,8 @@ public class WorldManager : MonoBehaviour
     [SerializeField] private GameObject hell;
     [SerializeField] private GameObject overworld;
 
+    public bool canMoveBetweenWorlds;
+    
     private void Start()
     {
         RenderSettings.fogColor = fogColorOverworld; 
@@ -17,9 +19,12 @@ public class WorldManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (canMoveBetweenWorlds)
         {
-            MoveBetweenWorlds();
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                MoveBetweenWorlds();
+            }
         }
     }
 
