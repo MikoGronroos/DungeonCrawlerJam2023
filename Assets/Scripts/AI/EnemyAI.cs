@@ -109,20 +109,20 @@ public class EnemyAI : MonoBehaviour
         }
         currentDirection = availableDirections[0];
                 
-        var targetPosition = transform.position + currentDirection;
-        var newPosIsOldPos = Vector3.Distance(targetPosition, _lastPosition) <= 0.3f;
-        var shouldFindNewPos = CanMove && newPosIsOldPos;
-        
-        if (shouldFindNewPos)
-        {
-            Wander();
-        }
-        else
-        {
+        // var targetPosition = transform.position + currentDirection;
+        // var newPosIsOldPos = Vector3.Distance(targetPosition, _lastPosition) <= 0.3f;
+        // var shouldFindNewPos = CanMove && newPosIsOldPos;
+        //
+        // if (shouldFindNewPos)
+        // {
+        //     Wander();
+        // }
+        // else
+        // {
             MoveToPosition(transform.position + currentDirection);
-        }
+        // }
         
-        _lastPosition = targetPosition;
+        // _lastPosition = targetPosition;
     }
 
     private void Chase()
@@ -132,7 +132,7 @@ public class EnemyAI : MonoBehaviour
     
     private void MoveToPosition(Vector3 pos)
     {
-        transform.DOMove(Vector3Int.RoundToInt(pos), 0.5f).SetEase(Ease.Flash).OnComplete(() =>
+        transform.DOMove(Vector3Int.RoundToInt(pos), 0.29f).SetEase(Ease.Linear).OnComplete(() =>
         {
             _enemyState = CanSeePlayer() ? EnemyState.CHASING : EnemyState.WANDERING;
             chasedLastKnownPosition = chased.transform.position;

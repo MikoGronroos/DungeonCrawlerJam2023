@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveDuration = 0.5f;
     public float transitionRotationSpeed = 500f;
 
-    private Vector3 targetGridPos;
+    // private Vector3 targetGridPos;
     private Vector3 targetRotation;
 
     public AudioSource WalkSound;
@@ -33,12 +33,17 @@ public class PlayerMovement : MonoBehaviour
 
     private Tween _moveTween;
 
-    private bool HasAlmostFinishedMoving => _moveTween != null && _moveTween.position > moveDuration - moveDuration / 4f;
+    private float _timeFromLastMove;
+
+    private bool _canMoveForward;
+    
+    private bool HasAlmostFinishedMoving => _moveTween != null && _moveTween.position > moveDuration / 2f;
     private void Start()
     {
-        targetGridPos = Vector3Int.RoundToInt(transform.position);
+        // targetGridPos = Vector3Int.RoundToInt(transform.position);
         targetRotation = new Vector3(0, 90, 0);
         _playerStill = true;
+        _canMoveForward = true;
     }
     
     private void Update()
@@ -47,9 +52,16 @@ public class PlayerMovement : MonoBehaviour
 
         UpdateMoveInput();
         UpdateRotateInput();
-        
-        
-        Debug.Log(CanMoveForward());
+
+        if (_timeFromLastMove > 0)
+        {
+            _canMoveForward = false;
+            _timeFromLastMove -= Time.deltaTime;
+        }
+        else
+        {
+            _canMoveForward = true;
+        }
     }
 
     private void LateUpdate()
@@ -85,16 +97,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 MoveForward();
             }
-            else if (HasAlmostFinishedMoving)
-            {
-                _moveForwardIsBuffered = true;
-            }
+            // else if (HasAlmostFinishedMoving)
+            // {
+            //     _moveForwardIsBuffered = true;
+            // }
 
         }
     }
 
     private bool CanMoveForward()
     {
+        if (!_canMoveForward) return false;
         if (ObstacleIsInFront()) return false; // Dont move if wall or enemy in front
         if(transform.eulerAngles != targetRotation) return false; // Dont move while rotating (when player presses rotate at the same time as move)
         if (!_playerStill) return false;
@@ -106,30 +119,34 @@ public class PlayerMovement : MonoBehaviour
     {
         _playerStill = false;
         if (WalkSound) WalkSound.Play();
-        _moveTween = transform.DOMove(transform.position + transform.forward, moveDuration).SetEase(Ease.Flash).OnComplete(
+        _timeFromLastMove = 0.3f;
+        _moveTween = transform.DOMove(transform.position + transform.forward, moveDuration).SetEase(Ease.Linear).OnComplete(
             () =>
             {
+                CheckTile(Vector3Int.RoundToInt(transform.position));
+                _playerStill = true;
+                RotateIfBuffered();
+                
                 OnMoved?.Invoke();
-                CheckTile(targetGridPos);
 
-                if (_moveForwardIsBuffered)
-                {
-                    _moveForwardIsBuffered = false;
-
-                    if (CanMoveForward())
-                    {
-                        MoveForward();
-                    }
-                    else
-                    {
-                        _playerStill = true;
-                    }
-                }
-                else
-                {
-                    _playerStill = true;
-                    RotateIfBuffered();
-                }
+                // if (_moveForwardIsBuffered)
+                // {
+                //     _moveForwardIsBuffered = false;
+                //
+                //     if (CanMoveForward())
+                //     {
+                //         MoveForward();
+                //     }
+                //     else
+                //     {
+                //         _playerStill = true;
+                //     }
+                // }
+                // else
+                // {
+                //     _playerStill = true;
+                //     RotateIfBuffered();
+                // }
             });
     }
 
@@ -170,7 +187,7 @@ public class PlayerMovement : MonoBehaviour
     private bool ObstacleIsInFront()
     {
         var isWall = Physics.Raycast(transform.position, transform.forward, 1, wallLayers);
-        var isEnemy = Physics.Raycast(transform.position, transform.forward, 2, enemyLayers);
+        var isEnemy = Physics.Raycast(transform.position, transform.forward, 1, enemyLayers);
 
         return isWall || isEnemy;
     }
