@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,23 +21,36 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 prevTargetGridPos;
     public Vector3 targetRotation;
 
+    public AudioSource WalkSound;
+
     [Tooltip("This variable is controlled from input state controller")]
-    public bool CanMove { get; set; }
+    [field: SerializeField] public bool CanMove { get; set; }
     
     [SerializeField] private int movementMultiplyer;
+
+    private bool _rotateRightIsBuffered;
+    private bool _rotateLeftIsBuffered;
 
     private void Start()
     {
         targetGridPos = Vector3Int.RoundToInt(transform.position);
     }
-
+    
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.W)) MoveForward();
         if (Input.GetKeyDown(KeyCode.S)) MoveBackward();
-        if (Input.GetKeyDown(KeyCode.D)) RotateRight();
-        if (Input.GetKeyDown(KeyCode.A)) RotateLeft();
+        
+        if (AtRest) // Rotate
+        {
+            if (Input.GetKeyDown(KeyCode.D)) RotateRight();
+            if (Input.GetKeyDown(KeyCode.A)) RotateLeft();
+        }
+        else // Buffer input when moving
+        {
+            if (!_rotateRightIsBuffered && Input.GetKeyDown(KeyCode.D)) _rotateRightIsBuffered = true;
+            if (!_rotateLeftIsBuffered && Input.GetKeyDown(KeyCode.A)) _rotateLeftIsBuffered = true;
+        }
 
         if (canMove())
         {
@@ -65,15 +80,51 @@ public class PlayerMovement : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), Time.deltaTime * transitionRotationSpeed);
             }
 
-            //Fire OnMoved Event
-            if((Vector3.Distance(transform.position, targetGridPos) < 0.05) && !playerStill) //Player has now reached the goal so call the OnMoved function and set player status to still
+            if((Vector3.Distance(transform.position, targetGridPos) < 0.02f) && !playerStill) //Player has now reached the goal so call the OnMoved function and set player status to still
             {
                 playerStill = true;
-                OnMoved();
-            }else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.05)) //If player has not reached the goal set playerStill to false
+                OnMoved?.Invoke();
+                RotateIfBuffered();
+            }
+            else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.02f)) //If player has not reached the goal set playerStill to false
             {
                 playerStill = false;
             }
+        }
+    }
+
+
+    private void RotateIfBuffered()
+    {
+        if (_rotateRightIsBuffered)
+        {
+            RotateRight();
+            _rotateRightIsBuffered = false;
+        }
+        if (_rotateLeftIsBuffered)
+        {
+            RotateLeft();
+            _rotateLeftIsBuffered = false;
+        }
+    }
+
+    public void LookAtTheEnemy(Transform target)
+    {
+        Vector3 dir = target.position - transform.position;
+        StartCoroutine(LerpLookAt(dir, 1));
+    }
+
+    public IEnumerator LerpLookAt(Vector3 dir, float duration)
+    {
+        float time = 0;
+        while (time < duration)
+        {
+            Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), time / duration);
+            time += Time.deltaTime;
+            rot.x = 0;
+            rot.z = 0;
+            transform.rotation = rot;
+            yield return null;
         }
     }
 
@@ -94,23 +145,31 @@ public class PlayerMovement : MonoBehaviour
 
     public void RotateLeft() { if (AtRest) targetRotation -= Vector3.up * 90f; }
     public void RotateRight() { if (AtRest) targetRotation += Vector3.up * 90f; }
-    public void MoveForward() { if (AtRest) { 
+    public void MoveForward() { if (AtRest) {
+        if (WalkSound)
+        {
+            WalkSound.Play();
+        }
             targetGridPos += transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
 
     private void CheckTile(Vector3 targetGridPos)
     {
-        int x = (int)targetGridPos.x;
-        int z = (int)targetGridPos.z;
+        int x = (int)Mathf.Ceil(targetGridPos.x);
+        int z = (int)Mathf.Ceil(targetGridPos.z);
+        Debug.Log(x + " " + z);
         if (Grid.GridCells.ContainsKey(new Vector2(x, z)))
         {
             Grid.GridCells[new Vector2(x, z)].OnStepped();
         }
     }
 
-    public void MoveBackward() { if (AtRest) { 
-            targetGridPos -= transform.forward * movementMultiplyer;
+    public void MoveBackward() { if (AtRest) {
+        if (WalkSound)
+        {
+            WalkSound.Play();
+        }            targetGridPos -= transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
     public void MoveLeft() { if (AtRest) targetGridPos -= transform.right; }
@@ -120,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
     {
         get
         {
-            if ((Vector3.Distance(transform.position, targetGridPos) < 0.05) && (Vector3.Distance(transform.eulerAngles, targetRotation) < 0.05f))
+            if ((Vector3.Distance(transform.position, targetGridPos) < 0.02) && (Vector3.Distance(transform.eulerAngles, targetRotation) < 0.02f))
                 return true;
             else
                 return false;

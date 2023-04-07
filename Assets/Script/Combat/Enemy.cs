@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour, IParticipant
 
     public bool Damage(Combat combat, int damage)
     {
-        Debug.Log("Hit1");
         currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth - damage, 0, currentStats.MaxHealth);
         if (currentStats.CurrentHealth <= 0)
         {
@@ -64,5 +63,10 @@ public class Enemy : MonoBehaviour, IParticipant
     {
         EndTurn(combat);
         gameObject.SetActive(false);
+    }
+
+    public Transform GetTransform()
+    {
+        return transform;
     }
 }

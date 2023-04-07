@@ -4,13 +4,29 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IParticipant
 {
-
     [SerializeField] private Stats currentStats;
 
     [SerializeField] private GameObject turnPanel;
     [SerializeField] private Button attackButton;
 
     private bool _dead;
+    private bool _canClickAttack;
+
+    #region Singleton
+
+    private static Player instance;
+
+    public static Player Instance
+    {
+        get { return instance; }
+    }
+
+    #endregion
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -20,15 +36,37 @@ public class Player : MonoBehaviour, IParticipant
     public bool Damage(Combat combat, int damage)
     {
         currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth - damage, 0, currentStats.MaxHealth);
+
         if (currentStats.CurrentHealth <= 0)
         {
-            HealthHitZero(combat);
+            HealthHitZero();
             _dead = true;
         }
         return _dead;
     }
 
+    public bool Damage(int damage)
+    {
+        currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth - damage, 0, currentStats.MaxHealth);
+
+        if (currentStats.CurrentHealth <= 0)
+        {
+            HealthHitZero();
+            _dead = true;
+        }
+        return _dead;
+    }
+
+    public void AddHealth(int health)
+    {
+        currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth + health, 0, currentStats.MaxHealth);
+    }
+
     public void HealthHitZero(Combat combat)
+    {
+    }
+    
+    public void HealthHitZero()
     {
     }
 
@@ -46,12 +84,17 @@ public class Player : MonoBehaviour, IParticipant
     public void StartTurn(Combat combat)
     {
         turnPanel.SetActive(true);
+        _canClickAttack = true;
         attackButton.onClick.AddListener(() =>
         {
-            combat.Attack((bool state) =>
+            if (_canClickAttack)
             {
-                AttackFinished(state, combat);
-            });
+                combat.Attack((bool state) =>
+                {
+                    AttackFinished(state, combat);
+                });
+            }
+            _canClickAttack = false;
         });
     }
 
@@ -72,4 +115,22 @@ public class Player : MonoBehaviour, IParticipant
     {
         EndTurn(combat);
     }
+
+    public void TryToOpenDoor()
+    {
+        RaycastHit raycastHit;
+        if (Physics.Raycast(transform.position, transform.forward, out raycastHit, 1f))
+        {
+            if (raycastHit.collider.gameObject.GetComponent<Door>())
+            {
+                raycastHit.collider.gameObject.GetComponent<Door>().Interact();
+            }
+        }
+    }
+    
+    public Transform GetTransform()
+    {
+        return transform;
+    }
+
 }

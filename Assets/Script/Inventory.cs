@@ -34,22 +34,61 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X)) SetupSlots();
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ConsumeItem(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ConsumeItem(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ConsumeItem(2);
+        }
     }
 
-    public void AddItem(Item item)
+    private void ConsumeItem(int index)
     {
-        var index = FindIndexOfEmptySlot();
 
-        if (index <= inventoryMaxSize)
+        if (inventoryItems[index] == null)
         {
-            inventoryItems[index] = item;
-        }
-        else
-        {
-            Debug.Log("Couldn't find an empty slot.");
+            return;
         }
 
+        if (inventoryItems[index].IsConsumable)
+        {
+            Player.Instance.AddHealth((inventoryItems[index] as ItemPotion).HealthAddon);
+            RemoveItem(inventoryItems[index]);
+        }
+
+        if (inventoryItems[index] as ItemKey)
+        {
+            Player.Instance.TryToOpenDoor(); 
+            //No need to remove key because door.cs does it for you
+        }
+    }
+
+    public bool TryToAddItem(Item item, GridCell cell)
+    {
+        if(item as ItemKey && !inventoryItems[1])
+        {
+            inventoryItems[1] = item;
+        }else if(item as ItemKey && inventoryItems[1])
+        {
+            return false;
+        }
+
+        if(item as ItemPotion && !inventoryItems[0])
+        {
+            inventoryItems[0] = item;
+        }else if(item as ItemPotion && !inventoryItems[0])
+        {
+            return false;
+        }
+
+        SetupSlots();
+        return true;
     }
 
     public bool HasItem(Item item)
@@ -102,13 +141,14 @@ public class Inventory : MonoBehaviour
     {
         int index = 0;
         bool noneIsEmpty = true;
-        for (index = 0; index < inventoryItems.Length; index++)
+        foreach (var item in inventoryItems)
         {
-            if (inventoryItems[index] != null)
+            if (inventoryItems[index] == null)
             {
                 noneIsEmpty = false;
                 break;
             }
+            index++;
         }
         if (noneIsEmpty)
         {
@@ -137,6 +177,7 @@ public abstract class Item : ScriptableObject
     public string ItemName;
     public string ItemId;
     public Sprite ItemIcon;
+    public bool IsConsumable;
 
     [ContextMenu("Generate new id")]
     public void GenerateId() => ItemId = Guid.NewGuid().ToString();

@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Combat : MonoBehaviour
 {
 
-    [SerializeField] private Enemy enemy;
     [SerializeField] private Player player;
+    [SerializeField] private PlayerMovement playerMovement;
 
     [SerializeField] private Dice dicePrefab;
     [SerializeField] private Transform diceSpawnPos;
@@ -19,13 +20,26 @@ public class Combat : MonoBehaviour
 
     private List<GameObject> dices = new List<GameObject>();
 
-    private void Update()
+    #region Singleton
+
+    private static Combat instance;
+
+    public static Combat Instance
     {
-        if (Input.GetKeyDown(KeyCode.G)) StartCombat(enemy);
+        get { return instance; }
     }
 
-    public void StartCombat(Enemy enemy)
+    #endregion
+
+    private void Awake()
     {
+        instance = this;
+    }
+    public void StartCombat(IParticipant enemy)
+    {
+        Transform target = enemy.GetTransform();
+        playerMovement.LookAtTheEnemy(target);
+        playerMovement.CanMove = false;
         _participants.Add(enemy);
         _participants.Add(player);
         isInCombat = true;
@@ -44,6 +58,7 @@ public class Combat : MonoBehaviour
         _participants = new List<IParticipant>();
         CleanUpDices();
         isInCombat = false;
+        playerMovement.CanMove = true;
     }
 
     private IEnumerator AttackIEnumerator(Action<bool> callback)
@@ -51,47 +66,33 @@ public class Combat : MonoBehaviour
         IParticipant attacker = _participants[currentTurn];
         IParticipant target = _participants[previousTurn];
         int newDamage = 0;
-        var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
-        dices.Add(dice.gameObject);
-        Debug.Log(target);
-        yield return new WaitUntil(() => dice.diceLanded);
-        if (attacker.GetStats().Strength + dice.sideLandedOn >= target.GetStats().Defense)
+        if (!attacker.GetStats().isInstakill)
         {
-            newDamage = 1;
-            if (!target.Damage(this, newDamage))
+            var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
+            dices.Add(dice.gameObject);
+            yield return new WaitUntil(() => dice.diceLanded);
+            if (attacker.GetStats().Strength + dice.sideLandedOn >= target.GetStats().Defense)
             {
+                newDamage = 1;
+                target.Damage(this, newDamage);
                 callback?.Invoke(true);
+            }
+            else
+            {
+                callback?.Invoke(false);
             }
         }
         else
         {
-            callback?.Invoke(false);
+            target.Damage(this, 1000); 
+            callback?.Invoke(true);
         }
-        Debug.Log(dice.sideLandedOn);
-        Debug.Log(newDamage);
-    }
-
-    private IEnumerator TryToHitIEnumerator(Action<bool> callback)
-    {
-        IParticipant attacker = _participants[currentTurn];
-        IParticipant target = _participants[previousTurn];
-        var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
-        dices.Add(dice.gameObject);
-        yield return new WaitUntil(() => dice.diceLanded);
-        if (attacker.GetStats().Accuracy + dice.sideLandedOn >= target.GetStats().Evasion)
-        {
-            StartCoroutine(AttackIEnumerator(callback));
-            Debug.Log("Hit");
-        }
-        else
-        {
-            callback?.Invoke(false);
-        }
+       
     }
 
     public void Attack(Action<bool> attackFinishedCallback)
     {
-        StartCoroutine(TryToHitIEnumerator(attackFinishedCallback));
+        StartCoroutine(AttackIEnumerator(attackFinishedCallback));
     }
 
     public void NextTurn()
@@ -138,6 +139,8 @@ public interface IParticipant
 
     bool Damage(Combat combat, int damage);
 
+    Transform GetTransform();
+
     Stats GetStats();
 
 }
@@ -145,10 +148,28 @@ public interface IParticipant
 [Serializable]
 public class Stats
 {
+    public StatsUI UI;
+    
     public int Strength = 0;
-    public int Evasion = 0;
-    public int Accuracy = 0;
     public int Defense = 0;
     public int MaxHealth = 0;
-    public int CurrentHealth = 0;
+    private int _currentHealth;
+
+
+    public int CurrentHealth
+    {
+        get => _currentHealth;
+        set
+        {
+            _currentHealth = value;
+            UI?.UpdateUI(_currentHealth, MaxHealth);
+        }
+    }
+    public bool isInstakill;
+}
+
+
+public abstract class StatsUI : MonoBehaviour
+{
+    public abstract void UpdateUI(int currentHealth, int maxHealth);
 }

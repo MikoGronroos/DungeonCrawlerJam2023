@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,4 +5,8 @@ using UnityEngine.Events;
 public class UIEventChannel : ScriptableObject
 {
     public UnityEvent<UIState> onUIStateChanged;
+    public void ChangeState(int newState)
+    {
+        onUIStateChanged?.Invoke((UIState)newState);
+    }
 }

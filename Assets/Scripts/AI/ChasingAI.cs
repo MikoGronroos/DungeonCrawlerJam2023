@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ChasingAI : MonoBehaviour
 {
+    [SerializeField] LayerMask playerLayer;
+    [SerializeField] LayerMask wallLayer;
+
     [SerializeField] LayerMask movementBlockLayer;
-    [SerializeField] LayerMask wallMask;
     [SerializeField] GameObject chased;
     [SerializeField] Vector3 chasedLastKnownPosition;
-    [SerializeField] Vector3 chasedBeforeLastKnownPosition;
 
     [SerializeField] bool chasing = false;
 
@@ -29,28 +30,78 @@ public class ChasingAI : MonoBehaviour
 
         //Shoot raycast from chaser to chased and if it collides with any walls the chased is not visible setting chasing to false
         //If the raycast finds the player start chasing
-        if (Physics.Raycast(transform.position, (chased.transform.position - transform.position).normalized, Vector3.Distance(transform.position, chased.transform.position), wallMask) && !chasing)
+        if (!findPlayerRaycast() && !chasing)
         {
-            Debug.Log("wandering");
-            Wander();
-        }else if(Physics.Raycast(transform.position, (chased.transform.position - transform.position).normalized, Vector3.Distance(transform.position, chased.transform.position), wallMask) && chasing)
-        {
-            Chase();
-        }
-        else
-        {
-            if(chasedBeforeLastKnownPosition != Vector3.zero)
+            if (!checkForPlayer())
             {
-                chasedBeforeLastKnownPosition = chasedLastKnownPosition;
+                Wander();
+                if (checkForPlayer())
+                {
+                    InitiateCombat();
+                }
+            }else
+            {
+                InitiateCombat();
+            }
+            
+        }else if(!findPlayerRaycast() && chasing)
+        {
+            if (!checkForPlayer())
+            {
+                Chase(); // continue to last known position
+                if (checkForPlayer())
+                {
+                    InitiateCombat();
+                }
             }
             else
             {
-                chasedBeforeLastKnownPosition = Vector3Int.RoundToInt(chased.transform.position);
+                InitiateCombat();
             }
+        }
+        else
+        {
             chasedLastKnownPosition = Vector3Int.RoundToInt(chased.transform.position);
             chasing = true;
-            Chase();
+            if (!checkForPlayer())
+            {
+                Chase();
+                if (checkForPlayer())
+                {
+                    InitiateCombat();
+                }
+            }
+            else
+            {
+                InitiateCombat();
+            }
         }
+    }
+
+    private bool findPlayerRaycast()
+    {
+        Ray forward = new Ray(transform.position, Vector3.forward);
+        Ray back = new Ray(transform.position, Vector3.back);
+        Ray left = new Ray(transform.position, Vector3.left);
+        Ray right = new Ray(transform.position, Vector3.right);
+
+        List<Ray> rays = new List<Ray>();
+        rays.Add(forward);
+        rays.Add(back);
+        rays.Add(left);
+        rays.Add(right);
+        RaycastHit raycastHit;
+        foreach(Ray ray in rays)
+        {
+            if(Physics.Raycast(ray.origin, ray.direction, out raycastHit, float.MaxValue, movementBlockLayer))
+            {
+                if(((1<<raycastHit.collider.gameObject.layer) & playerLayer) != 0)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     void Wander()
@@ -106,12 +157,14 @@ public class ChasingAI : MonoBehaviour
 
     void Chase()
     {
-        transform.position = Vector3.MoveTowards(transform.position, chasedBeforeLastKnownPosition, 1);
-        if(Vector3.Distance(transform.position, chasedBeforeLastKnownPosition) < 0.05f)
+        transform.position = Vector3.MoveTowards(transform.position, chasedLastKnownPosition, 1);
+        if(Vector3.Distance(transform.position, chasedLastKnownPosition) < 0.05f && !findPlayerRaycast())
         {
-            chasedBeforeLastKnownPosition = Vector3.zero;
             chasedLastKnownPosition = Vector3.zero;
             chasing = false;
+        }else if(Vector3.Distance(transform.position, chasedLastKnownPosition) < 0.05f && findPlayerRaycast())
+        {
+            chasedLastKnownPosition = Vector3Int.RoundToInt(chased.transform.position);
         }
     }
     
@@ -126,6 +179,38 @@ public class ChasingAI : MonoBehaviour
             listToShuffle[i] = value;
         }
         return listToShuffle;
+    }
+
+    private bool checkForPlayer()
+    {
+
+        Ray forward = new Ray(transform.position, Vector3.forward);
+        Ray back = new Ray(transform.position, Vector3.back);
+        Ray left = new Ray(transform.position, Vector3.left);
+        Ray right = new Ray(transform.position, Vector3.right);
+
+        List<Ray> rays = new List<Ray>();
+        rays.Add(forward);
+        rays.Add(back);
+        rays.Add(left);
+        rays.Add(right);
+        RaycastHit raycastHit;
+        foreach (Ray ray in rays)
+        {
+            if (!Physics.Raycast(ray, 1, wallLayer))
+            {
+                if (Physics.Raycast(ray.origin, ray.direction, out raycastHit, 1.2f, playerLayer))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private void InitiateCombat()
+    {
+        Combat.Instance.StartCombat(GetComponent<IParticipant>());
     }
 
 }
