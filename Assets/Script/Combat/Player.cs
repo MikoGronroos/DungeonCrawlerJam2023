@@ -109,6 +109,7 @@ public class Player : MonoBehaviour, IParticipant
             {
                 raycastHit.collider.gameObject.GetComponent<Door>().Interact();
             }
+        }
     }
     
     public Transform GetTransform()
