@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -106,6 +108,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void LookAtTheEnemy(Transform target)
+    {
+        Vector3 dir = target.position - transform.position;
+        StartCoroutine(LerpLookAt(dir, 1));
+    }
+
+    public IEnumerator LerpLookAt(Vector3 dir, float duration)
+    {
+        float time = 0;
+        while (time < duration)
+        {
+            Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), time / duration);
+            time += Time.deltaTime;
+            rot.x = 0;
+            rot.z = 0;
+            transform.rotation = rot;
+            yield return null;
+        }
+    }
 
     private bool canMove()
     {

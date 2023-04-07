@@ -64,4 +64,9 @@ public class Enemy : MonoBehaviour, IParticipant
         EndTurn(combat);
         gameObject.SetActive(false);
     }
+
+    public Transform GetTransform()
+    {
+        return transform;
+    }
 }

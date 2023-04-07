@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Combat : MonoBehaviour
 {
@@ -34,9 +35,10 @@ public class Combat : MonoBehaviour
     {
         instance = this;
     }
-
     public void StartCombat(IParticipant enemy)
     {
+        Transform target = enemy.GetTransform();
+        playerMovement.LookAtTheEnemy(target);
         playerMovement.CanMove = false;
         _participants.Add(enemy);
         _participants.Add(player);
@@ -136,6 +138,8 @@ public interface IParticipant
     void HealthHitZero(Combat combat);
 
     bool Damage(Combat combat, int damage);
+
+    Transform GetTransform();
 
     Stats GetStats();
 
