@@ -2013,6 +2013,7 @@ MonoBehaviour:
   targetGridPos: {x: 2.0000005, y: 1, z: -0.0000104904175}
   prevTargetGridPos: {x: 2.0000005, y: 1, z: -0.0000104904175}
   targetRotation: {x: 0, y: 90, z: 0}
+  WalkSound: {fileID: 0}
   <CanMove>k__BackingField: 0
   movementMultiplyer: 1
 --- !u!81 &417608715
@@ -2113,6 +2114,7 @@ MonoBehaviour:
     Defense: 9
     MaxHealth: 1
     CurrentHealth: 9
+    isInstakill: 0
   turnPanel: {fileID: 0}
   attackButton: {fileID: 0}
 --- !u!1001 &422411123
@@ -12326,6 +12328,14 @@ PrefabInstance:
       propertyPath: chased
       value: 
       objectReference: {fileID: 417608713}
+    - target: {fileID: 1591640009826841451, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: gridCellItemGameObject
+      value: 
+      objectReference: {fileID: 1354701025456601642, guid: 350fd58cc43c5a849ab1bf14978d5ae1, type: 3}
+    - target: {fileID: 1591640009826841451, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: onSteppedPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4549400030424812988, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: m_Name
       value: Overworld

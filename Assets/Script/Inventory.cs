@@ -61,10 +61,33 @@ public class Inventory : MonoBehaviour
             Player.Instance.AddHealth((inventoryItems[index] as ItemPotion).HealthAddon);
             RemoveItem(inventoryItems[index]);
         }
+
+        if (inventoryItems[index] as ItemKey)
+        {
+            Player.Instance.TryToOpenDoor(); 
+            //No need to remove key because door.cs does it for you
+        }
     }
 
-    public bool TryToAddItem(Item item)
+    public bool TryToAddItem(Item item, GridCell cell)
     {
+        if(item as ItemKey && !inventoryItems[1])
+        {
+            inventoryItems[1] = item;
+        }else if(item as ItemKey && inventoryItems[1])
+        {
+            
+        }
+
+        if(item as ItemPotion && !inventoryItems[0])
+        {
+            inventoryItems[0] = item;
+        }else if(item as ItemPotion && !inventoryItems[0])
+        {
+
+        }
+
+        /*
         bool addedItem = false;
         var index = FindIndexOfEmptySlot();
 
@@ -77,8 +100,9 @@ public class Inventory : MonoBehaviour
         {
             Debug.Log("Couldn't find an empty slot.");
         }
+        */
         SetupSlots();
-        return addedItem;
+        return true;
     }
 
     public bool HasItem(Item item)
