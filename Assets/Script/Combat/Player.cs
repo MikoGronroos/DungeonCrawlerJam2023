@@ -39,7 +39,18 @@ public class Player : MonoBehaviour, IParticipant
         currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth - damage, 0, currentStats.MaxHealth);
         if (currentStats.CurrentHealth <= 0)
         {
-            HealthHitZero(combat);
+            HealthHitZero();
+            _dead = true;
+        }
+        return _dead;
+    }
+
+    public bool Damage(int damage)
+    {
+        currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth - damage, 0, currentStats.MaxHealth);
+        if (currentStats.CurrentHealth <= 0)
+        {
+            HealthHitZero();
             _dead = true;
         }
         return _dead;
@@ -51,6 +62,10 @@ public class Player : MonoBehaviour, IParticipant
     }
 
     public void HealthHitZero(Combat combat)
+    {
+    }
+    
+    public void HealthHitZero()
     {
     }
 
