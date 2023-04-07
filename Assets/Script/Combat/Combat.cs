@@ -161,8 +161,27 @@ public interface IParticipant
 [Serializable]
 public class Stats
 {
+    public StatsUI UI;
+    
     public int Strength = 0;
     public int Defense = 0;
     public int MaxHealth = 0;
-    public int CurrentHealth = 0;
+    private int _currentHealth;
+
+
+    public int CurrentHealth
+    {
+        get => _currentHealth;
+        set
+        {
+            _currentHealth = value;
+            UI?.UpdateUI(_currentHealth, MaxHealth);
+        }
+    }
+}
+
+
+public abstract class StatsUI : MonoBehaviour
+{
+    public abstract void UpdateUI(int currentHealth, int maxHealth);
 }

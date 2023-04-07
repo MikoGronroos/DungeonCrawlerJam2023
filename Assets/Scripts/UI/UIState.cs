@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum UIState
 {
-    MENU,
-    GAME,
-    VICTORY,
-    LOSE,
+    MENU = 0,
+    GAME = 1,
+    VICTORY = 2,
+    LOSE = 3,
 }

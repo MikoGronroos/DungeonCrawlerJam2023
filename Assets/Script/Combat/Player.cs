@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IParticipant
 {
-
     [SerializeField] private Stats currentStats;
 
     [SerializeField] private GameObject turnPanel;
@@ -37,6 +36,7 @@ public class Player : MonoBehaviour, IParticipant
     public bool Damage(Combat combat, int damage)
     {
         currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth - damage, 0, currentStats.MaxHealth);
+
         if (currentStats.CurrentHealth <= 0)
         {
             HealthHitZero();
@@ -48,6 +48,7 @@ public class Player : MonoBehaviour, IParticipant
     public bool Damage(int damage)
     {
         currentStats.CurrentHealth = Mathf.Clamp(currentStats.CurrentHealth - damage, 0, currentStats.MaxHealth);
+
         if (currentStats.CurrentHealth <= 0)
         {
             HealthHitZero();
