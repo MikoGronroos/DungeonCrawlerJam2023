@@ -7,6 +7,7 @@ public class GridCell : MonoBehaviour
 
     public int x, z;
 
+    [SerializeField] private AudioSource pickupAudioSource;
     [SerializeField] private UnityEvent onSteppedEvent;
     [SerializeField] private UnityEvent onSteppedFireOnceEvent;
     [SerializeField] private UnityEvent onSteppedPickupEvent;
@@ -32,12 +33,18 @@ public class GridCell : MonoBehaviour
         if (!hasBeenStepped)
         {
             onSteppedFireOnceEvent?.Invoke();
+        }
+
+        if (gridCellItem || gridCellItemGameObject)
+        {
             if (Inventory.Instance.TryToAddItem(gridCellItem, this))
             {
+                pickupAudioSource.Play();
                 ClearCell();
                 onSteppedPickupEvent?.Invoke();
             }
         }
+
         hasBeenStepped = true;
         onSteppedEvent?.Invoke();
     }
