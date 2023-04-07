@@ -2135,6 +2135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2632,6 +2633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2838,6 +2840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3141,6 +3144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3250,6 +3254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3553,6 +3558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3856,6 +3862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4353,6 +4360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4656,6 +4664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4765,6 +4774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5068,6 +5078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5468,6 +5479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5868,6 +5880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -6947,6 +6960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7056,6 +7070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7165,6 +7180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7468,6 +7484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7577,6 +7594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7686,6 +7704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -7989,6 +8008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8098,6 +8118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8401,6 +8422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8510,6 +8532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8813,6 +8836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9310,6 +9334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9516,6 +9541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9625,6 +9651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10025,6 +10052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10328,6 +10356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10534,6 +10563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10643,6 +10673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10849,6 +10880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -10958,6 +10990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11067,6 +11100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11273,6 +11307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11382,6 +11417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11588,6 +11624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11697,6 +11734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -12097,6 +12135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -12788,6 +12827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -13188,6 +13228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -13297,6 +13338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -13697,6 +13739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -13903,6 +13946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14497,6 +14541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14897,6 +14942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -15006,6 +15052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -15406,6 +15453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -15515,6 +15563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -15915,6 +15964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16218,6 +16268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16327,6 +16378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16824,6 +16876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -17030,6 +17083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -17236,6 +17290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -17636,6 +17691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -17939,6 +17995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -18436,6 +18493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -18836,6 +18894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -19042,6 +19101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -19248,6 +19308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -19939,6 +20000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -20436,6 +20498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -21224,6 +21287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -21527,6 +21591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -22121,6 +22186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -22437,7 +22503,7 @@ GameObject:
   - component: {fileID: 4549400029458499094}
   - component: {fileID: 1750938015}
   m_Layer: 0
-  m_Name: devil render_0
+  m_Name: Chaser Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22762,6 +22828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -23162,6 +23229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -23271,6 +23339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -23865,6 +23934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -23974,6 +24044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -24859,6 +24930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -25356,6 +25428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -25659,6 +25732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -25768,6 +25842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -25974,6 +26049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -26083,6 +26159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -26774,6 +26851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -27271,6 +27349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -27380,6 +27459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -27489,6 +27569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -27598,6 +27679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -27901,6 +27983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -28107,6 +28190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -28216,6 +28300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -28422,6 +28507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -28628,6 +28714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -28931,6 +29018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -29428,6 +29516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -29634,6 +29723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -30034,6 +30124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -30143,6 +30234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -30543,6 +30635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -31040,6 +31133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -31538,6 +31632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -32061,6 +32156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -32267,6 +32363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -32473,6 +32570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -32776,6 +32874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -32885,6 +32984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -32994,6 +33094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -33103,6 +33204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -33406,6 +33508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -33515,6 +33618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -33818,6 +33922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -34315,6 +34420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -34521,6 +34627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -34630,6 +34737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -34836,6 +34944,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -34945,6 +35054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -35248,6 +35358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -35454,6 +35565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -36533,6 +36645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -36739,6 +36852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -36848,6 +36962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -37054,6 +37169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -37357,6 +37473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -37660,6 +37777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -37769,6 +37887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -37878,6 +37997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -37987,6 +38107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -38096,6 +38217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -38205,6 +38327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -38314,6 +38437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -38811,6 +38935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -40019,6 +40144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -41001,6 +41127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -41110,6 +41237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -41510,6 +41638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -42007,6 +42136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -42213,6 +42343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -42419,6 +42550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -42722,6 +42854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -42928,6 +43061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -43328,6 +43462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -43437,6 +43572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -44031,6 +44167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -44722,6 +44859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -44928,6 +45066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -45134,6 +45273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -45437,6 +45577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -45740,6 +45881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -45849,6 +45991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -46152,6 +46295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -46261,6 +46405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -46878,7 +47023,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4549400029968559381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47676,6 +47821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -47785,6 +47931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -48185,6 +48332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -48585,6 +48733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -48985,6 +49134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -49191,6 +49341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -50076,6 +50227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -50185,6 +50337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -50294,6 +50447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -50403,6 +50557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -50512,6 +50667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -50718,6 +50874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -50924,6 +51081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -51130,6 +51288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -51336,6 +51495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -51445,6 +51605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -51554,6 +51715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -51857,6 +52019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -52451,6 +52614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -52948,6 +53112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -53154,6 +53319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -53263,6 +53429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -53857,6 +54024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -54063,6 +54231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -54657,6 +54826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -55542,6 +55712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -55784,6 +55955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -55893,6 +56065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -56196,6 +56369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -56305,6 +56479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -56899,6 +57074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -57202,6 +57378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -57408,6 +57585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -58196,6 +58374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -58305,6 +58484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -58705,6 +58885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -58814,6 +58995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -58923,6 +59105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -60390,6 +60573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -60887,6 +61071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -60996,6 +61181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -61105,6 +61291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -61602,6 +61789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -62099,6 +62287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -62305,6 +62494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -62414,6 +62604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -62620,6 +62811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -63311,6 +63503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -63420,6 +63613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -63723,6 +63917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -63929,6 +64124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -64038,6 +64234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -64438,6 +64635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -65420,6 +65618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -65529,6 +65728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -66123,6 +66323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -66329,6 +66530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -66632,6 +66834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -67129,6 +67332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -67238,6 +67442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -67541,6 +67746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -68232,6 +68438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -68438,6 +68645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -68644,6 +68852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -69626,6 +69835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -69735,6 +69945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -70135,6 +70346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -70244,6 +70456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -70838,6 +71051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -70947,6 +71161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -71189,6 +71404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -71395,6 +71611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -71698,6 +71915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -71807,6 +72025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -72110,6 +72329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -72219,6 +72439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -73007,6 +73228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -73213,6 +73435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -73613,6 +73836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -74013,6 +74237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -74607,6 +74832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -74813,6 +75039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -75407,6 +75634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -75710,6 +75938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -75819,6 +76048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -75928,6 +76158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -76231,6 +76462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -76340,6 +76572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -76934,6 +77167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -77043,6 +77277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -77249,6 +77484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -77649,6 +77885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -77758,6 +77995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -78449,6 +78687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -78946,6 +79185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -79055,6 +79295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -79358,6 +79599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -79952,6 +80194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -80158,6 +80401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -80364,6 +80608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -80667,6 +80912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -80970,6 +81216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -81176,6 +81423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -81867,6 +82115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -82170,6 +82419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -82279,6 +82529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -82485,6 +82736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -82594,6 +82846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -82800,6 +83053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -83006,6 +83260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -83115,6 +83370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -83709,6 +83965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -83818,6 +84075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -83927,6 +84185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -84230,6 +84489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -84436,6 +84696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -84642,6 +84903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -84848,6 +85110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -84957,6 +85220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -85066,6 +85330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -85369,6 +85634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -85478,6 +85744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -86266,6 +86533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -86375,6 +86643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -86581,6 +86850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -86690,6 +86960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -87090,6 +87361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -87296,6 +87568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -88084,6 +88357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -88290,6 +88564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -88399,6 +88674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -88605,6 +88881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -88714,6 +88991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -89017,6 +89295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -89320,6 +89599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -89526,6 +89806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -89829,6 +90110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -89938,6 +90220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -90241,6 +90524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -90641,6 +90925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -92302,6 +92587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -92411,6 +92697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -92714,6 +93001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -92823,6 +93111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -93029,6 +93318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -93429,6 +93719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -93538,6 +93829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -93938,6 +94230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -94144,6 +94437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -94641,6 +94935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -95138,6 +95433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -95247,6 +95543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -95356,6 +95653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -95562,6 +95860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -95671,6 +95970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -95780,6 +96080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -95986,6 +96287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -96192,6 +96494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -96398,6 +96701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -96507,6 +96811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -97004,6 +97309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -97210,6 +97516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -97416,6 +97723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -97525,6 +97833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -97731,6 +98040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -97840,6 +98150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -98725,6 +99036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -99028,6 +99340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -99428,6 +99741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -99828,6 +100142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -100034,6 +100349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -100522,6 +100838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -100728,6 +101045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -100934,6 +101252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -101043,6 +101362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -101346,6 +101666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -101940,6 +102261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -102243,6 +102565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -102352,6 +102675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -103140,6 +103464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -103443,6 +103768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -103552,6 +103878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -103661,6 +103988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -104255,6 +104583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -104558,6 +104887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -104764,6 +105094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -105067,6 +105398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -106437,6 +106769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -106546,6 +106879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -106849,6 +107183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -106958,6 +107293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -107067,6 +107403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -107273,6 +107610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -107382,6 +107720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -107976,6 +108315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -108182,6 +108522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -108388,6 +108729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -108497,6 +108839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -108606,6 +108949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -108812,6 +109156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -109309,6 +109654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -109515,6 +109861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -109818,6 +110165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   z: 0
+  pickupAudioSource: {fileID: 0}
   onSteppedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -110435,7 +110783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4549400031180559113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
