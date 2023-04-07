@@ -76,7 +76,7 @@ public class Inventory : MonoBehaviour
             inventoryItems[1] = item;
         }else if(item as ItemKey && inventoryItems[1])
         {
-            
+            return false;
         }
 
         if(item as ItemPotion && !inventoryItems[0])
@@ -84,23 +84,9 @@ public class Inventory : MonoBehaviour
             inventoryItems[0] = item;
         }else if(item as ItemPotion && !inventoryItems[0])
         {
-
+            return false;
         }
 
-        /*
-        bool addedItem = false;
-        var index = FindIndexOfEmptySlot();
-
-        if (index <= inventoryMaxSize - 1)
-        {
-            inventoryItems[index] = item;
-            addedItem = true;
-        }
-        else
-        {
-            Debug.Log("Couldn't find an empty slot.");
-        }
-        */
         SetupSlots();
         return true;
     }
