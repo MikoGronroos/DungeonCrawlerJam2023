@@ -14231,10 +14231,13 @@ PrefabInstance:
     - target: {fileID: 3049547066847241316, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: gridCellItemGameObject
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 0}
     - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: gridCellItemGameObject
       value: 
+=======
+>>>>>>> Elias
       objectReference: {fileID: 1354701025456601642, guid: 350fd58cc43c5a849ab1bf14978d5ae1, type: 3}
     - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.size
@@ -14308,10 +14311,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 4549400029636828555, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: m_Name
       value: Floor (Ritual Knife)
       objectReference: {fileID: 0}
+=======
+>>>>>>> Elias
     - target: {fileID: 4549400029818227316, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -14322,7 +14328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4549400030036858296, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: m_Name
+<<<<<<< HEAD
       value: Floor
+=======
+      value: Floor (ritual knife)
+>>>>>>> Elias
       objectReference: {fileID: 0}
     - target: {fileID: 4549400030138633623, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: m_RootOrder
