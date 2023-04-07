@@ -19,23 +19,36 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 prevTargetGridPos;
     public Vector3 targetRotation;
 
+    public AudioSource WalkSound;
+
     [Tooltip("This variable is controlled from input state controller")]
     [field: SerializeField] public bool CanMove { get; set; }
     
     [SerializeField] private int movementMultiplyer;
 
+    private bool _rotateRightIsBuffered;
+    private bool _rotateLeftIsBuffered;
+
     private void Start()
     {
         targetGridPos = Vector3Int.RoundToInt(transform.position);
     }
-
+    
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.W)) MoveForward();
         if (Input.GetKeyDown(KeyCode.S)) MoveBackward();
-        if (Input.GetKeyDown(KeyCode.D)) RotateRight();
-        if (Input.GetKeyDown(KeyCode.A)) RotateLeft();
+        
+        if (AtRest) // Rotate
+        {
+            if (Input.GetKeyDown(KeyCode.D)) RotateRight();
+            if (Input.GetKeyDown(KeyCode.A)) RotateLeft();
+        }
+        else // Buffer input when moving
+        {
+            if (!_rotateRightIsBuffered && Input.GetKeyDown(KeyCode.D)) _rotateRightIsBuffered = true;
+            if (!_rotateLeftIsBuffered && Input.GetKeyDown(KeyCode.A)) _rotateLeftIsBuffered = true;
+        }
 
         if (canMove())
         {
@@ -68,15 +81,30 @@ public class PlayerMovement : MonoBehaviour
             if((Vector3.Distance(transform.position, targetGridPos) < 0.02f) && !playerStill) //Player has now reached the goal so call the OnMoved function and set player status to still
             {
                 playerStill = true;
-                OnMoved();
-
-            }else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.02f)) //If player has not reached the goal set playerStill to false
+                OnMoved?.Invoke();
+                RotateIfBuffered();
+            }
+            else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.02f)) //If player has not reached the goal set playerStill to false
             {
                 playerStill = false;
             }
         }
     }
 
+
+    private void RotateIfBuffered()
+    {
+        if (_rotateRightIsBuffered)
+        {
+            RotateRight();
+            _rotateRightIsBuffered = false;
+        }
+        if (_rotateLeftIsBuffered)
+        {
+            RotateLeft();
+            _rotateLeftIsBuffered = false;
+        }
+    }
 
 
     private bool canMove()
@@ -96,7 +124,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void RotateLeft() { if (AtRest) targetRotation -= Vector3.up * 90f; }
     public void RotateRight() { if (AtRest) targetRotation += Vector3.up * 90f; }
-    public void MoveForward() { if (AtRest) { 
+    public void MoveForward() { if (AtRest) {
+            WalkSound.Play();
             targetGridPos += transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
@@ -112,7 +141,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void MoveBackward() { if (AtRest) { 
+    public void MoveBackward() { if (AtRest) {
+            WalkSound.Play();
             targetGridPos -= transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
