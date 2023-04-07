@@ -64,46 +64,29 @@ public class Combat : MonoBehaviour
         IParticipant attacker = _participants[currentTurn];
         IParticipant target = _participants[previousTurn];
         int newDamage = 0;
-        var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
-        dices.Add(dice.gameObject);
-        Debug.Log(target);
-        yield return new WaitUntil(() => dice.diceLanded);
-        if (attacker.GetStats().Strength + dice.sideLandedOn >= target.GetStats().Defense)
+        if (!attacker.GetStats().isInstakill)
         {
-            newDamage = 1;
-            if (!target.Damage(this, newDamage))
+            var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
+            dices.Add(dice.gameObject);
+            yield return new WaitUntil(() => dice.diceLanded);
+            if (attacker.GetStats().Strength + dice.sideLandedOn >= target.GetStats().Defense)
             {
+                newDamage = 1;
+                target.Damage(this, newDamage);
                 callback?.Invoke(true);
+            }
+            else
+            {
+                callback?.Invoke(false);
             }
         }
         else
         {
-            callback?.Invoke(false);
+            target.Damage(this, 1000); 
+            callback?.Invoke(true);
         }
-        Debug.Log(dice.sideLandedOn);
-        Debug.Log(newDamage);
+       
     }
-
-    /*
-    private IEnumerator TryToHitIEnumerator(Action<bool> callback)
-    {
-        IParticipant attacker = _participants[currentTurn];
-        IParticipant target = _participants[previousTurn];
-        var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
-        dices.Add(dice.gameObject);
-        yield return new WaitUntil(() => dice.diceLanded);
-        if (attacker.GetStats().Accuracy + dice.sideLandedOn >= target.GetStats().Evasion)
-        {
-            StartCoroutine(AttackIEnumerator(callback));
-            Debug.Log("Hit");
-        }
-        else
-        {
-            callback?.Invoke(false);
-        }
-    }
-
-    */
 
     public void Attack(Action<bool> attackFinishedCallback)
     {
@@ -165,4 +148,5 @@ public class Stats
     public int Defense = 0;
     public int MaxHealth = 0;
     public int CurrentHealth = 0;
+    public bool isInstakill;
 }
