@@ -2244,7 +2244,6 @@ Transform:
   m_Children:
   - {fileID: 1011880447}
   - {fileID: 1187010059}
-  - {fileID: 1804008352}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -6677,7 +6676,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6260416533650572486, guid: ef5de99ae8cc69c4499b1f5449bcedfa, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4e107ab8d5b61de41a486c0903f170b9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d851889d7d5f63d40bdba426bebf6d70, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -12495,134 +12494,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000004, y: 0.00000023841858, z: 1.0000004}
   m_Center: {x: -0.00000005960465, y: 0.0000004172325, z: 0.5000001}
---- !u!1 &1804008351
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1804008352}
-  - component: {fileID: 1804008353}
-  m_Layer: 9
-  m_Name: Walking Audio Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1804008352
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804008351}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 417608717}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1804008353
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804008351}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -6263140875464353240, guid: ef5de99ae8cc69c4499b1f5449bcedfa, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 5e83b5c172fabec4da6e7f2fac6dd8b0, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1818217915 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: eabecee0dbacef14c878a5e7980b5677, type: 3}
@@ -14360,29 +14231,10 @@ PrefabInstance:
     - target: {fileID: 3049547066847241316, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: gridCellItemGameObject
       value: 
-<<<<<<< HEAD
-      objectReference: {fileID: 0}
-    - target: {fileID: 3049547066847241316, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
-      propertyPath: gridCellItem
-      value: 
-      objectReference: {fileID: 11400000, guid: 3529c5da170156e4d912ba2e7a138b7b, type: 2}
-    - target: {fileID: 3049547066847241316, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
-      propertyPath: gridCellItemGameObject
-      value: 
-      objectReference: {fileID: 4879150576784944426, guid: af173721be7f00547b6fc3d7086a7610, type: 3}
-    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
-      propertyPath: gridCellItemGameObject
-      value: 
-=======
->>>>>>> Elias
-      objectReference: {fileID: 1354701025456601642, guid: 350fd58cc43c5a849ab1bf14978d5ae1, type: 3}
-    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
-      propertyPath: gridCellItemGameObject
-      value: 
       objectReference: {fileID: 1354701025456601642, guid: 350fd58cc43c5a849ab1bf14978d5ae1, type: 3}
     - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: onSteppedFireOnceEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -14452,13 +14304,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-    - target: {fileID: 4549400029636828555, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
-      propertyPath: m_Name
-      value: Floor (Ritual Knife)
-      objectReference: {fileID: 0}
-=======
->>>>>>> Elias
     - target: {fileID: 4549400029818227316, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -14469,11 +14314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4549400030036858296, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: m_Name
-<<<<<<< HEAD
-      value: Floor
-=======
       value: Floor (ritual knife)
->>>>>>> Elias
       objectReference: {fileID: 0}
     - target: {fileID: 4549400030138633623, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: m_RootOrder
