@@ -116,8 +116,21 @@ public class Player : MonoBehaviour, IParticipant
         EndTurn(combat);
     }
 
+    public void TryToOpenDoor()
+    {
+        RaycastHit raycastHit;
+        if (Physics.Raycast(transform.position, transform.forward, out raycastHit, 1f))
+        {
+            if (raycastHit.collider.gameObject.GetComponent<Door>())
+            {
+                raycastHit.collider.gameObject.GetComponent<Door>().Interact();
+            }
+        }
+    }
+    
     public Transform GetTransform()
     {
         return transform;
     }
+
 }
