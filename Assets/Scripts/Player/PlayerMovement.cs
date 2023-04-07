@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,88 +9,129 @@ public class PlayerMovement : MonoBehaviour
     public delegate void PlayerMoved();
     public static event PlayerMoved OnMoved;
 
-    public bool playerStill;
-
-    public bool smoothTransition = false;
-    public float transitionSpeed = 10f;
+    public float moveDuration = 0.5f;
     public float transitionRotationSpeed = 500f;
 
-    public Vector3 targetGridPos;
-    public Vector3 prevTargetGridPos;
-    public Vector3 targetRotation;
+    private Vector3 targetGridPos;
+    private Vector3 targetRotation;
 
     public AudioSource WalkSound;
 
     [Tooltip("This variable is controlled from input state controller")]
     [field: SerializeField] public bool CanMove { get; set; }
     
-    [SerializeField] private int movementMultiplyer;
+    [SerializeField] private int movementMultiplier;
+
+    [SerializeField] private LayerMask wallLayers;
+    [SerializeField] private LayerMask enemyLayers;
+
+    public bool _playerStill;
 
     private bool _rotateRightIsBuffered;
     private bool _rotateLeftIsBuffered;
+    private bool _moveForwardIsBuffered;
 
+    private Tween _moveTween;
+
+    private bool HasAlmostFinishedMoving => _moveTween != null && _moveTween.position > moveDuration - moveDuration / 4f;
     private void Start()
     {
         targetGridPos = Vector3Int.RoundToInt(transform.position);
+        targetRotation = new Vector3(0, 90, 0);
+        _playerStill = true;
     }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W)) MoveForward();
-        if (Input.GetKeyDown(KeyCode.S)) MoveBackward();
+        if (!CanMove) return;
+
+        UpdateMoveInput();
+        UpdateRotateInput();
         
-        if (AtRest) // Rotate
+        
+        Debug.Log(CanMoveForward());
+    }
+
+    private void LateUpdate()
+    {      
+        if (!CanMove) return;
+
+        // Constantly update rotation
+        if (targetRotation.y > 270f && targetRotation.y < 361f) targetRotation.y = 0f;
+        if (targetRotation.y < 0f) targetRotation.y = 270f;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), Time.deltaTime * transitionRotationSpeed);
+    }
+    
+    private void UpdateRotateInput()
+    {
+        if (_playerStill) // Rotate
         {
             if (Input.GetKeyDown(KeyCode.D)) RotateRight();
             if (Input.GetKeyDown(KeyCode.A)) RotateLeft();
         }
-        else // Buffer input when moving
+        else if(HasAlmostFinishedMoving) // Buffer rotation input when moving and almost stopped
         {
             if (!_rotateRightIsBuffered && Input.GetKeyDown(KeyCode.D)) _rotateRightIsBuffered = true;
             if (!_rotateLeftIsBuffered && Input.GetKeyDown(KeyCode.A)) _rotateLeftIsBuffered = true;
         }
-
-        if (canMove())
-        {
-            Move();
-        }
     }
 
-    private void Move()
+    private void UpdateMoveInput()
     {
-        if (CanMove)
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            prevTargetGridPos = targetGridPos;
-
-            Vector3 targetPosition = targetGridPos;
-
-            if (targetRotation.y > 270f && targetRotation.y < 361f) targetRotation.y = 0f;
-            if (targetRotation.y < 0f) targetRotation.y = 270f;
-
-            if (!smoothTransition)
+            // Dont move if already moving
+            if (CanMoveForward())  
             {
-                transform.position = targetPosition;
-                transform.rotation = Quaternion.Euler(targetRotation);
+                MoveForward();
             }
-            else
+            else if (HasAlmostFinishedMoving)
             {
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * transitionSpeed);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), Time.deltaTime * transitionRotationSpeed);
+                _moveForwardIsBuffered = true;
             }
 
-            if((Vector3.Distance(transform.position, targetGridPos) < 0.02f) && !playerStill) //Player has now reached the goal so call the OnMoved function and set player status to still
-            {
-                playerStill = true;
-                OnMoved?.Invoke();
-                RotateIfBuffered();
-            }
-            else if(!(Vector3.Distance(transform.position, targetGridPos) < 0.02f)) //If player has not reached the goal set playerStill to false
-            {
-                playerStill = false;
-            }
         }
     }
 
+    private bool CanMoveForward()
+    {
+        if (ObstacleIsInFront()) return false; // Dont move if wall or enemy in front
+        if(transform.eulerAngles != targetRotation) return false; // Dont move while rotating (when player presses rotate at the same time as move)
+        if (!_playerStill) return false;
+
+        return true;
+    }
+
+    private void MoveForward()
+    {
+        _playerStill = false;
+        if (WalkSound) WalkSound.Play();
+        _moveTween = transform.DOMove(transform.position + transform.forward, moveDuration).SetEase(Ease.Flash).OnComplete(
+            () =>
+            {
+                OnMoved?.Invoke();
+                CheckTile(targetGridPos);
+
+                if (_moveForwardIsBuffered)
+                {
+                    _moveForwardIsBuffered = false;
+
+                    if (CanMoveForward())
+                    {
+                        MoveForward();
+                    }
+                    else
+                    {
+                        _playerStill = true;
+                    }
+                }
+                else
+                {
+                    _playerStill = true;
+                    RotateIfBuffered();
+                }
+            });
+    }
 
     private void RotateIfBuffered()
     {
@@ -101,19 +140,19 @@ public class PlayerMovement : MonoBehaviour
             RotateRight();
             _rotateRightIsBuffered = false;
         }
+        
         if (_rotateLeftIsBuffered)
         {
             RotateLeft();
             _rotateLeftIsBuffered = false;
         }
     }
-
+    
     public void LookAtTheEnemy(Transform target)
     {
         Vector3 dir = target.position - transform.position;
         StartCoroutine(LerpLookAt(dir, 1));
     }
-
     public IEnumerator LerpLookAt(Vector3 dir, float duration)
     {
         float time = 0;
@@ -127,62 +166,26 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
     }
-
-    private bool canMove()
+    
+    private bool ObstacleIsInFront()
     {
+        var isWall = Physics.Raycast(transform.position, transform.forward, 1, wallLayers);
+        var isEnemy = Physics.Raycast(transform.position, transform.forward, 2, enemyLayers);
 
-        if (Physics.Raycast(transform.position, (new Vector3(targetGridPos.x, transform.position.y, targetGridPos.z) - transform.position).normalized, Vector3.Distance(targetGridPos, transform.position)))
-        {
-            targetGridPos = prevTargetGridPos;
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-        
+        return isWall || isEnemy;
     }
 
-    public void RotateLeft() { if (AtRest) targetRotation -= Vector3.up * 90f; }
-    public void RotateRight() { if (AtRest) targetRotation += Vector3.up * 90f; }
-    public void MoveForward() { if (AtRest) {
-        if (WalkSound)
-        {
-            WalkSound.Play();
-        }
-            targetGridPos += transform.forward * movementMultiplyer;
-            CheckTile(targetGridPos);
-        } }
+    public void RotateLeft() { targetRotation -= Vector3.up * 90f; }
+    public void RotateRight() { targetRotation += Vector3.up * 90f; }
 
     private void CheckTile(Vector3 targetGridPos)
     {
         int x = (int)Mathf.Ceil(targetGridPos.x);
         int z = (int)Mathf.Ceil(targetGridPos.z);
-        Debug.Log(x + " " + z);
+        // Debug.Log(x + " " + z);
         if (Grid.GridCells.ContainsKey(new Vector2(x, z)))
         {
             Grid.GridCells[new Vector2(x, z)].OnStepped();
-        }
-    }
-
-    public void MoveBackward() { if (AtRest) {
-        if (WalkSound)
-        {
-            WalkSound.Play();
-        }            targetGridPos -= transform.forward * movementMultiplyer;
-            CheckTile(targetGridPos);
-        } }
-    public void MoveLeft() { if (AtRest) targetGridPos -= transform.right; }
-    public void MoveRight() { if (AtRest) targetGridPos += transform.right; }
-
-    bool AtRest
-    {
-        get
-        {
-            if ((Vector3.Distance(transform.position, targetGridPos) < 0.02) && (Vector3.Distance(transform.eulerAngles, targetRotation) < 0.02f))
-                return true;
-            else
-                return false;
         }
     }
 }
