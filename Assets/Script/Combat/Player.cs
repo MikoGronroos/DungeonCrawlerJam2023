@@ -115,4 +115,9 @@ public class Player : MonoBehaviour, IParticipant
     {
         EndTurn(combat);
     }
+
+    public Transform GetTransform()
+    {
+        return transform;
+    }
 }

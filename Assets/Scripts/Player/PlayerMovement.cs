@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -18,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 targetGridPos;
     public Vector3 prevTargetGridPos;
     public Vector3 targetRotation;
+
+    public AudioSource WalkSound;
 
     [Tooltip("This variable is controlled from input state controller")]
     [field: SerializeField] public bool CanMove { get; set; }
@@ -104,6 +108,25 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void LookAtTheEnemy(Transform target)
+    {
+        Vector3 dir = target.position - transform.position;
+        StartCoroutine(LerpLookAt(dir, 1));
+    }
+
+    public IEnumerator LerpLookAt(Vector3 dir, float duration)
+    {
+        float time = 0;
+        while (time < duration)
+        {
+            Quaternion rot = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), time / duration);
+            time += Time.deltaTime;
+            rot.x = 0;
+            rot.z = 0;
+            transform.rotation = rot;
+            yield return null;
+        }
+    }
 
     private bool canMove()
     {
@@ -122,7 +145,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void RotateLeft() { if (AtRest) targetRotation -= Vector3.up * 90f; }
     public void RotateRight() { if (AtRest) targetRotation += Vector3.up * 90f; }
-    public void MoveForward() { if (AtRest) { 
+    public void MoveForward() { if (AtRest) {
+            WalkSound.Play();
             targetGridPos += transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
@@ -138,7 +162,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void MoveBackward() { if (AtRest) { 
+    public void MoveBackward() { if (AtRest) {
+            WalkSound.Play();
             targetGridPos -= transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
