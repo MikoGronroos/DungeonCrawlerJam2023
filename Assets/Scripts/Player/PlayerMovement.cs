@@ -146,7 +146,10 @@ public class PlayerMovement : MonoBehaviour
     public void RotateLeft() { if (AtRest) targetRotation -= Vector3.up * 90f; }
     public void RotateRight() { if (AtRest) targetRotation += Vector3.up * 90f; }
     public void MoveForward() { if (AtRest) {
+        if (WalkSound)
+        {
             WalkSound.Play();
+        }
             targetGridPos += transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
@@ -163,8 +166,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void MoveBackward() { if (AtRest) {
+        if (WalkSound)
+        {
             WalkSound.Play();
-            targetGridPos -= transform.forward * movementMultiplyer;
+        }            targetGridPos -= transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
     public void MoveLeft() { if (AtRest) targetGridPos -= transform.right; }
