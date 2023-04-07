@@ -1564,6 +1564,7 @@ Transform:
   - {fileID: 1057321801}
   - {fileID: 2467468105907816249}
   - {fileID: 1824867878}
+  - {fileID: 1908887066}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2114,12 +2115,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStill: 0
   smoothTransition: 1
-  transitionSpeed: 7.5
+  transitionSpeed: 3
   transitionRotationSpeed: 750
   targetGridPos: {x: 2.0000005, y: 1, z: -0.0000104904175}
   prevTargetGridPos: {x: 2.0000005, y: 1, z: -0.0000104904175}
   targetRotation: {x: 0, y: 90, z: 0}
-  WalkSound: {fileID: 0}
+  WalkSound: {fileID: 1002940120}
   <CanMove>k__BackingField: 0
   movementMultiplyer: 1
 --- !u!81 &417608715
@@ -2187,6 +2188,8 @@ Transform:
   m_Children:
   - {fileID: 1011880447}
   - {fileID: 1187010059}
+  - {fileID: 1002940121}
+  - {fileID: 933133987}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -5843,6 +5846,134 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eabecee0dbacef14c878a5e7980b5677, type: 3}
   m_PrefabInstance: {fileID: 921814172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &933133986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933133987}
+  - component: {fileID: 933133988}
+  m_Layer: 9
+  m_Name: Item Pickup Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &933133987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933133986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417608717}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &933133988
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933133986}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6263140875464353240, guid: ef5de99ae8cc69c4499b1f5449bcedfa, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 2466b70aa73f28740a67b0a03b9e11ef, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.798
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &942600993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6530,6 +6661,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991751151}
   m_CullTransparentMesh: 1
+--- !u!1 &1002940119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1002940121}
+  - component: {fileID: 1002940120}
+  m_Layer: 9
+  m_Name: Footstep Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1002940120
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002940119}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6263140875464353240, guid: ef5de99ae8cc69c4499b1f5449bcedfa, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 05b5221e3203dca4d8fb40c373ccf10a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1002940121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002940119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 417608717}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1011880445
 GameObject:
   m_ObjectHideFlags: 0
@@ -6546,7 +6805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &1011880446
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6557,7 +6816,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6260416533650572486, guid: ef5de99ae8cc69c4499b1f5449bcedfa, type: 2}
-  m_audioClip: {fileID: 8300000, guid: d851889d7d5f63d40bdba426bebf6d70, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e107ab8d5b61de41a486c0903f170b9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -12464,6 +12723,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eabecee0dbacef14c878a5e7980b5677, type: 3}
+--- !u!1 &1908887065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908887066}
+  - component: {fileID: 1908887067}
+  m_Layer: 0
+  m_Name: Audio Reverb Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1908887066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908887065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 305741766}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!167 &1908887067
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908887065}
+  m_Enabled: 1
+  m_MinDistance: 30
+  m_MaxDistance: 30
+  m_ReverbPreset: 9
+  m_Room: -1000
+  m_RoomHF: 0
+  m_DecayTime: 2.91
+  m_DecayHFRatio: 1.3
+  m_Reflections: -602
+  m_ReflectionsDelay: 0.015
+  m_Reverb: -302
+  m_ReverbDelay: 0.022
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1001 &1916854797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13911,6 +14226,730 @@ PrefabInstance:
       propertyPath: ritualKnifeUI
       value: 
       objectReference: {fileID: 187473446}
+    - target: {fileID: 10770005399945282, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 25173121300499327, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 47691534445021452, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 64899227991249699, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 138413313650984056, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 142882176106203831, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 167094257679926044, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 225447372128675409, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 244841714909117382, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 339573101275281948, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 385363034209249499, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 413352921119637036, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 422559375494208231, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 462297014092978368, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 517362949843299186, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 518149838812777801, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 525291034226966013, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 559644465530326478, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 624372138922417321, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 639843182097263272, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 706225370488185430, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 739848176164421822, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 766568770306494593, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 769295558141551166, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 779541161134136444, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 793305533162848368, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 804276318000925428, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 806699360680109573, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 829470143241139446, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 842748185304957393, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 892610870662959095, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 916723282981863581, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 954290012905766382, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 978430942255883481, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 993434595106370258, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 996363604901915147, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1024551175865314558, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1092801505057910150, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1116304425052069691, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1133749021811663215, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1140714755841265591, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1184879628668946813, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1188227122190609385, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1203126521292470712, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1209813061743023261, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1218032658256186508, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1245328278567563965, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1250125152690284839, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1256041844823424085, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1277642093113581981, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1278658944939526658, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1281920304577711520, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1291864105973599033, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1321176780231462662, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1322642176096372906, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1373368197658681276, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1375019168767377661, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1392514359845624654, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1399991963353104581, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1409515725300045620, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1492427610887490606, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1493360005762880702, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1517265308950757495, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1519458053850075958, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1591640009826841451, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1604510541655417396, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1607139154678014679, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1634081421123766072, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1636247644064091343, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1638201558599775042, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1661916730257620737, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1716941980663917400, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1746770133985222575, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1762890874601040747, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1783632674408783576, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1792533739844154952, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1792954198697259402, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1800482141906240876, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1814659965037185239, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1829221277222072175, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1867950304188980487, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1872927250309835732, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1906378400102481731, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1985894209462425418, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 1995183568889644625, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2012672484631350368, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2035798596404639129, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2050901964397529204, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2097997335519749105, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2128409716462955432, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2191748973620821717, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2218023600789055433, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2265437544471662669, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2294594911166096232, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2312002311928062849, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2317732212929064116, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2327349993135563725, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2415861936542832118, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2434646618397999310, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2447078723755741699, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2504901756217672751, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2533879917786819502, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2578009672190054757, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2592824519405095148, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2595529103567595876, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2618320297954701382, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2635015024696938059, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2639185021477111973, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2705446471027788474, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2739260857527371988, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2765814399926897013, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2789559890791184254, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2863959847887130687, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 2932652482004371624, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3021475536738725686, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3049547066847241316, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3081167498615015770, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3107906549145141737, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3157506981563008059, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3170153563484771839, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3225413962367677053, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3266284841727548459, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3268309382192935770, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3293359983348839701, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3296407315986722477, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3312334972299311091, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3358139454046839958, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3370712233152267045, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3394721066839619609, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3397736165634785279, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3409267974421609430, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3433387852849712472, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3438102687213708370, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3530718001390557668, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3538480495995854281, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3550825710540861071, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3579847537376216604, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3585205807330733132, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3596047823876675430, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3623151910022204838, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3637099150042637902, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3708470233793817847, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3720469211687683262, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3738302770555514608, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3745589334954816730, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3771519444927823581, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3771760113281552665, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: onSteppedPickupEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: onSteppedPickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: onSteppedPickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: onSteppedPickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: onSteppedPickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: onSteppedPickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820382106804844407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: onSteppedPickupEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827320563432715674, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3866097999424208117, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3897690109005755676, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3930201275982232471, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3938332357324760645, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3955411176996555722, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 3967931830088769284, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4001867181870603349, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4012520419378083904, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4053556285430851387, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4053568157636330294, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4055720441508500248, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4062846885046898966, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4091774378082192588, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4098966652861584173, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4150652834581357187, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4191880450863538255, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4204272058186901986, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4244026440283395252, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4287186079865213723, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4317051796210474669, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4364602646588164828, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4380076798665075687, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4469237937364558871, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4478466489440986743, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4483518869945138865, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
     - target: {fileID: 4549400030424812988, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
       propertyPath: m_Name
       value: Overworld
@@ -13959,6 +14998,702 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4560400717706872644, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4631743261860183256, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4648479054696884524, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4659539849076339414, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4691002069957774062, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4772125646673481103, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4855390237294778591, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4875960466717110578, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4886544916582351101, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4902856192948175839, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4905729632879074764, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4930515523813045362, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4952616885353611674, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 4986069748823010139, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5021059315781955825, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5245716463503885747, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5259801706788552567, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5269810067545028331, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5273283884799676658, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5276793775480941083, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5334553493997767467, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5340578265732346830, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5359206605258764660, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5378972880549888143, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5379436387218384560, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5419599680889274547, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5448082027341624959, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5502716767939728484, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5503808997400162886, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5511066555097500407, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5540656500928402515, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5546559696692040064, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5551956688942191018, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5624928517536102418, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5662784307904214759, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5678841703943872130, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5732090183035921478, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5732167411230521002, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5784381970712952956, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5816893753665568198, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5824055477992465378, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5846761262238671649, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5872103231717900397, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5884536666423445502, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5927695200727310160, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5950738244852524776, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5964290395990076034, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5980492272334699241, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 5997799380997500062, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6004417641996544763, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6016116618373923331, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6047093902773198822, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6086985600417675974, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6100642159947966676, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6133347807803617855, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6164683626263453752, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6183096149621319983, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6243279288171691441, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6244257523376182086, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6255879207922043593, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6413302702236309935, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6424110256965134338, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6429642566457862345, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6438287292248041654, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6460590117482898341, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6473923569545314549, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6514313595271350417, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6527358491025745967, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6541613712788995136, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6546892515493486558, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6562480604368776077, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6614549154099479387, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6622556230511799206, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6635243183408180575, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6664398082754913977, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6669449224285107764, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6695279845935083955, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6719394603919738682, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6723532387602386442, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6741306968952581111, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6745670454423627262, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6749892747307808612, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6785920684117565631, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6815988502226362186, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6848232434946145866, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6856488266991603817, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6892077959319356584, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6921690260272059186, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6951068670500618437, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6959218194897220027, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6973430098529543571, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 6996690868884112491, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7018305164409435664, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7022081294095853505, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7054440375380909712, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7062623389333841947, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7080593742994044287, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7095450808051607585, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7171268311250751028, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7185754628413391517, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7188807120007130230, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7216307321704216935, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7257180974569591045, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7266868451500830329, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7329868102616582105, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7357059618905699376, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7365992434759531609, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7388721269216103545, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7487636659467505176, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7498461479779315553, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7521666167022400514, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7549062662138340445, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7551355483883879046, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7561585778578355630, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7574247160611806986, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7586705061064272909, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7607659973153181362, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7643849594292364586, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7700865010143493768, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7717030505155233497, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7781631410764821452, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7786951654988151812, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7792252948307266848, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7810717378065953877, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7835209072476124871, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7946341787595017701, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 7988955930251684614, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8054951902143831875, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8063302222019647644, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8092983266528297866, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8095877165083440535, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8132751405033029832, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8161590566963923961, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8181751794669373707, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8192344688411775378, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8207714486972817374, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8254038607712842444, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8264789752322223335, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8300232940689387740, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8321689954709190330, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8332719838790094067, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8337736532865686945, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8356147120793791965, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8360535021648163726, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8376588438589720742, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8431327693947683445, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8442103421322605251, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8468488679948266879, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8511788160746661484, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8543070211506079583, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8550389264124950766, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8587503451803326875, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8603369855909327111, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8618907876384199276, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8690886816501958578, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8703135956459310833, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8733464572490901329, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8746817984122952319, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8777754470316030035, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8783055729104760529, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8829076818023418041, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8977595465013711585, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8991691313817983488, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 8994447399472685339, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9005318262840092068, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9042299962901266392, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9134177016413545573, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9163438672269865726, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9172271571216204101, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9189061552662627751, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9196105313802845184, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9203504477372350776, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9206044955501373318, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
+    - target: {fileID: 9206783498240985465, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
+      propertyPath: pickupAudioSource
+      value: 
+      objectReference: {fileID: 933133988}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e960a8d1bac356b428af5dd1cedeadc7, type: 3}
 --- !u!1001 &5959714895716512688

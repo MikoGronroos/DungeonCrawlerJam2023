@@ -71,12 +71,13 @@ public class Inventory : MonoBehaviour
 
     public bool TryToAddItem(Item item, GridCell cell)
     {
+
         if(item as ItemKey && !inventoryItems[1])
         {
             inventoryItems[1] = item;
         }else if(item as ItemKey && inventoryItems[1])
         {
-            
+            return false;
         }
 
         if(item as ItemPotion && !inventoryItems[0])
@@ -84,7 +85,7 @@ public class Inventory : MonoBehaviour
             inventoryItems[0] = item;
         }else if(item as ItemPotion && !inventoryItems[0])
         {
-
+            return false;
         }
 
         /*
