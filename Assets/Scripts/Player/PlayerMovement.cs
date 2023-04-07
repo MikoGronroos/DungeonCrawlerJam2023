@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 prevTargetGridPos;
     public Vector3 targetRotation;
 
+    public AudioSource WalkSound;
+
     [Tooltip("This variable is controlled from input state controller")]
     [field: SerializeField] public bool CanMove { get; set; }
     
@@ -94,7 +96,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void RotateLeft() { if (AtRest) targetRotation -= Vector3.up * 90f; }
     public void RotateRight() { if (AtRest) targetRotation += Vector3.up * 90f; }
-    public void MoveForward() { if (AtRest) { 
+    public void MoveForward() { if (AtRest) {
+            WalkSound.Play();
             targetGridPos += transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
@@ -110,7 +113,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void MoveBackward() { if (AtRest) { 
+    public void MoveBackward() { if (AtRest) {
+            WalkSound.Play();
             targetGridPos -= transform.forward * movementMultiplyer;
             CheckTile(targetGridPos);
         } }
