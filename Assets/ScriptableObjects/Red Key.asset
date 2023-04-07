@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becc70a799abdcd4d825295925a7fb6b, type: 3}
+  m_Name: Red Key
+  m_EditorClassIdentifier: 
+  ItemName: Red Key
+  ItemId: e993092e-585c-47d6-bd0d-bac86d9d0162
+  ItemIcon: {fileID: -227037520, guid: a578d484d7f50c44996b374a986e52fd, type: 3}
+  IsConsumable: 0

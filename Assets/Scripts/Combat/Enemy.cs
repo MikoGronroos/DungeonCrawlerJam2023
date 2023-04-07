@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IParticipant
 {
-
     [SerializeField] private Stats currentStats;
 
     private bool _dead = false;
@@ -26,6 +25,7 @@ public class Enemy : MonoBehaviour, IParticipant
 
     public void EndTurn(Combat combat)
     {
+        
     }
 
     public Stats GetStats()
@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour, IParticipant
 
     public void HealthHitZero(Combat combat)
     {
+        Debug.Log("health hit zero enemy");
         combat.EndCombat();
     }
 

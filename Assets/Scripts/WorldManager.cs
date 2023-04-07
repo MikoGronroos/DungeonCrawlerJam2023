@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class WorldManager : MonoBehaviour
 {
+    [SerializeField] private Player player;
     [SerializeField] private Color fogColorOverworld;
     [SerializeField] private Color fogColorHell;
     [SerializeField] private GameObject hell;
@@ -33,7 +34,10 @@ public class WorldManager : MonoBehaviour
         hell.SetActive(!hell.activeSelf);
         overworld.SetActive(!overworld.activeSelf);
         
-        RenderSettings.fogColor = hell.activeSelf ? fogColorHell : fogColorOverworld; 
+        RenderSettings.fogColor = hell.activeSelf ? fogColorHell : fogColorOverworld;
+
+
+        player.Damage(10);
     }
 
 }

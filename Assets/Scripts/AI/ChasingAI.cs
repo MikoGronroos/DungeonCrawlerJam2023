@@ -1,9 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChasingAI : MonoBehaviour
 {
+
+    [SerializeField] private Image deathUIImage;
+    [SerializeField] private TextMeshProUGUI deathTextUGUI;
+    [SerializeField] private GameManager gameManager;
     [SerializeField] LayerMask playerLayer;
     [SerializeField] LayerMask wallLayer;
 
@@ -15,14 +24,32 @@ public class ChasingAI : MonoBehaviour
 
     [SerializeField] List<Vector3> availableDirections = new List<Vector3>();
 
-    private void OnEnable()
+    private bool _canRunAI;
+
+    private void Awake()
     {
-        PlayerMovement.OnMoved += RunAI;
+        deathUIImage.fillAmount = 0;
+        deathUIImage.gameObject.SetActive(false);
+        _canRunAI = true;
+        deathTextUGUI.DOFade(0, 0);
     }
 
-    private void OnDisable()
+    // private void OnEnable()
+    // {
+    //     PlayerMovement.OnMoved += RunAI;
+    // }
+    //
+    // private void OnDisable()
+    // {
+    //     PlayerMovement.OnMoved -= RunAI;
+    // }
+
+    private void Update()
     {
-        PlayerMovement.OnMoved -= RunAI;
+        if (_canRunAI)
+        {
+            RunAI();
+        }
     }
 
     void RunAI()
@@ -68,13 +95,49 @@ public class ChasingAI : MonoBehaviour
                 Chase();
                 if (checkForPlayer())
                 {
-                    InitiateCombat();
+                    KillPlayer();
+                    // InitiateCombat();
                 }
             }
             else
             {
-                InitiateCombat();
+                KillPlayer();
+                // InitiateCombat();
             }
+        }
+    }
+
+    private void KillPlayer()
+    {
+        Debug.Log("Kill player");
+        _canRunAI = false;
+        StartCoroutine(KillPlayerSequence());
+
+        IEnumerator KillPlayerSequence()
+        {
+            chased.GetComponent<PlayerMovement>().CanMove = false;
+            var targetDirection = transform.position - chased.transform.position; // Get the direction to the target
+            targetDirection.y = 0; // Make sure the billboard is only rotated on the y-axis
+
+            if (targetDirection != Vector3.zero)
+            {
+                chased.transform.DORotate(Quaternion.LookRotation(targetDirection).eulerAngles, 0.2f, RotateMode.Fast);
+                // chased.transform.rotation = Quaternion.LookRotation(-targetDirection); // Rotate the billboard to face the opposite direction of the target
+            }
+
+            yield return new WaitForSeconds(0.2f);
+            
+            transform.DOMove(chased.transform.position + Vector3.down * 0.25f, 0.2f).SetEase(Ease.Flash);
+
+            yield return new WaitForSeconds(0.2f);
+            deathUIImage.gameObject.SetActive(true);
+            deathUIImage.DOFillAmount(1, 0.2f);
+            deathTextUGUI.DOFade(1, 0.2f).SetDelay(0.1f);
+            yield return new WaitForSeconds(3f);
+            deathUIImage.fillOrigin = 0;
+            deathUIImage.DOFillAmount(0, 0.2f);
+            yield return new WaitForSeconds(0.2f);
+            gameManager.LoseGame();
         }
     }
 
@@ -150,14 +213,15 @@ public class ChasingAI : MonoBehaviour
             }
         }
         currentDirection = availableDirections[0];
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + currentDirection, 1);
+        transform.position = Vector3.MoveTowards(transform.position, Vector3Int.RoundToInt(transform.position + currentDirection), Time.deltaTime);
 
 
     }
 
     void Chase()
     {
-        transform.position = Vector3.MoveTowards(transform.position, chasedLastKnownPosition, 1);
+        
+        transform.position = Vector3.MoveTowards(transform.position, Vector3Int.RoundToInt(chasedLastKnownPosition), Time.deltaTime);
         if(Vector3.Distance(transform.position, chasedLastKnownPosition) < 0.05f && !findPlayerRaycast())
         {
             chasedLastKnownPosition = Vector3.zero;
@@ -197,7 +261,7 @@ public class ChasingAI : MonoBehaviour
         {
             if (!Physics.Raycast(ray, 1, wallLayer))
             {
-                if (Physics.Raycast(ray.origin, ray.direction, out raycastHit, 1.2f, playerLayer))
+                if (Physics.Raycast(ray.origin, ray.direction, out raycastHit, 0.5f, playerLayer))
                 {
                     return true;
                 }

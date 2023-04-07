@@ -30,7 +30,7 @@ public class Player : MonoBehaviour, IParticipant
 
     private void Start()
     {
-        currentStats.CurrentHealth = currentStats.MaxHealth;
+        currentStats.CurrentHealth = currentStats.MaxHealth / 2;
     }
 
     public bool Damage(Combat combat, int damage)
@@ -68,6 +68,7 @@ public class Player : MonoBehaviour, IParticipant
     
     public void HealthHitZero()
     {
+        
     }
 
     public void EndTurn(Combat combat)
@@ -83,19 +84,24 @@ public class Player : MonoBehaviour, IParticipant
 
     public void StartTurn(Combat combat)
     {
-        turnPanel.SetActive(true);
-        _canClickAttack = true;
-        attackButton.onClick.AddListener(() =>
+        combat.Attack((bool state) =>
         {
-            if (_canClickAttack)
-            {
-                combat.Attack((bool state) =>
-                {
-                    AttackFinished(state, combat);
-                });
-            }
-            _canClickAttack = false;
+            AttackFinished(state, combat);
         });
+        
+        // turnPanel.SetActive(true);
+        // _canClickAttack = true;
+        // attackButton.onClick.AddListener(() =>
+        // {
+        //     if (_canClickAttack)
+        //     {
+        //         combat.Attack((bool state) =>
+        //         {
+        //             AttackFinished(state, combat);
+        //         });
+        //     }
+        //     _canClickAttack = false;
+        // });
     }
 
     private void AttackFinished(bool state, Combat combat)

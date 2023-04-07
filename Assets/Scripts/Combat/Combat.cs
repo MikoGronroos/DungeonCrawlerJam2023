@@ -40,8 +40,8 @@ public class Combat : MonoBehaviour
         Transform target = enemy.GetTransform();
         playerMovement.LookAtTheEnemy(target);
         playerMovement.CanMove = false;
-        _participants.Add(enemy);
         _participants.Add(player);
+        _participants.Add(enemy);
         isInCombat = true;
         currentTurn = 0;
         previousTurn = 1;
@@ -65,28 +65,41 @@ public class Combat : MonoBehaviour
     {
         IParticipant attacker = _participants[currentTurn];
         IParticipant target = _participants[previousTurn];
-        int newDamage = 0;
-        if (!attacker.GetStats().isInstakill)
+
+        // var dmg = attacker.GetStats().Strength;
+        target.Damage(this, 999999);
+        
+        if (attacker is Player)
         {
-            var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
-            dices.Add(dice.gameObject);
-            yield return new WaitUntil(() => dice.diceLanded);
-            if (attacker.GetStats().Strength + dice.sideLandedOn >= target.GetStats().Defense)
-            {
-                newDamage = 1;
-                target.Damage(this, newDamage);
-                callback?.Invoke(true);
-            }
-            else
-            {
-                callback?.Invoke(false);
-            }
+            player.AddHealth(target.GetStats().MaxHealth);
         }
-        else
-        {
-            target.Damage(this, 1000); 
-            callback?.Invoke(true);
-        }
+        
+        callback.Invoke(true);
+        
+        yield return new WaitForSeconds(1);
+        
+        // int newDamage = 0;
+        // if (!attacker.GetStats().isInstakill)
+        // {
+        //     var dice = Instantiate(dicePrefab, diceSpawnPos.position, Quaternion.identity);
+        //     dices.Add(dice.gameObject);
+        //     yield return new WaitUntil(() => dice.diceLanded);
+        //     if (attacker.GetStats().Strength + dice.sideLandedOn >= target.GetStats().Defense)
+        //     {
+        //         newDamage = 1;
+        //         target.Damage(this, newDamage);
+        //         callback?.Invoke(true);
+        //     }
+        //     else
+        //     {
+        //         callback?.Invoke(false);
+        //     }
+        // }
+        // else
+        // {
+        //     target.Damage(this, 1000); 
+        //     callback?.Invoke(true);
+        // }
        
     }
 

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +38,16 @@ public class GameManager : MonoBehaviour
         UIEventChannel.onUIStateChanged?.Invoke(initialUIState);
         audioEventChannel.ToggleSFX();
         audioEventChannel.ToggleMusic();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void LoseGame()
+    {
+        UIEventChannel.ChangeState((int)UIState.LOSE);
     }
     
     private void OnBloodSacrificed()

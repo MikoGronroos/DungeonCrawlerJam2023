@@ -23,7 +23,7 @@ public class GridCell : MonoBehaviour
         z = (int)transform.position.z;
         if (gridCellItemGameObject)
         {
-            cloneItem = (GameObject)Instantiate(gridCellItemGameObject, transform.position + Vector3.up / 2, Quaternion.identity);
+            cloneItem = (GameObject)Instantiate(gridCellItemGameObject, transform.position + Vector3.up * 0.4f, Quaternion.identity);
         }
     }
 

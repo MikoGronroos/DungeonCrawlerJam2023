@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2458632054865273551}
   - component: {fileID: 5531265820212289518}
-  m_Layer: 0
+  - component: {fileID: 6685722332472213128}
+  m_Layer: 7
   m_Name: Wall Lock Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &6685722332472213128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390995147363597406}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 1, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
