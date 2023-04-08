@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private ChasingAI devil;
     public AudioEventChannel audioEventChannel;
     public UIEventChannel UIEventChannel;
     public UIState initialUIState;
@@ -22,6 +23,16 @@ public class GameManager : MonoBehaviour
         {
             altar.OnBloodSacrificed.AddListener(OnBloodSacrificed);
         }
+        
+        UIEventChannel.onUIStateChanged.AddListener(OnUIStateChanged);
+    }
+
+    private void OnUIStateChanged(UIState uiState)
+    {
+        if (uiState == UIState.GAME)
+        {
+            devil._canRunAI = true;
+        }
     }
 
     private void OnDisable()
@@ -30,6 +41,7 @@ public class GameManager : MonoBehaviour
         {
             altar.OnBloodSacrificed.RemoveAllListeners();
         }
+        UIEventChannel.onUIStateChanged.RemoveListener(OnUIStateChanged);
     }
 
     private void BootGame()
@@ -38,6 +50,7 @@ public class GameManager : MonoBehaviour
         UIEventChannel.onUIStateChanged?.Invoke(initialUIState);
         audioEventChannel.ToggleSFX();
         audioEventChannel.ToggleMusic();
+        devil._canRunAI = false;
     }
 
     public void RestartGame()

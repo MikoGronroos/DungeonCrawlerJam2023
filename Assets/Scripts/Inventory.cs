@@ -71,7 +71,6 @@ public class Inventory : MonoBehaviour
 
     public bool TryToAddItem(Item item, GridCell cell)
     {
-
         if(item as ItemKey && !inventoryItems[1])
         {
             inventoryItems[1] = item;

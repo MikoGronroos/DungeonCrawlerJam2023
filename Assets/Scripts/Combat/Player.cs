@@ -1,9 +1,17 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IParticipant
 {
+    [SerializeField] private GameManager gameManager;
+
+    [SerializeField] private Image deathUIImage;
+    [SerializeField] private TextMeshProUGUI deathTextUGUI;
     [SerializeField] private Stats currentStats;
 
     [SerializeField] private GameObject turnPanel;
@@ -30,7 +38,13 @@ public class Player : MonoBehaviour, IParticipant
 
     private void Start()
     {
-        currentStats.CurrentHealth = currentStats.MaxHealth / 2;
+        currentStats.CurrentHealth = 15;
+    }
+
+    [ContextMenu("Kill player")]
+    private void Damage()
+    {
+        Damage(currentStats.MaxHealth);
     }
 
     public bool Damage(Combat combat, int damage)
@@ -64,12 +78,35 @@ public class Player : MonoBehaviour, IParticipant
 
     public void HealthHitZero(Combat combat)
     {
+        
     }
     
     public void HealthHitZero()
     {
-        
+        KillPlayer();
     }
+
+    private void KillPlayer()
+    {
+        Debug.Log("Kill player");
+        StartCoroutine(KillPlayerSequence());
+
+        IEnumerator KillPlayerSequence()
+        {
+            GetComponent<PlayerMovement>().CanMove = false;
+
+            yield return new WaitForSeconds(0.2f);
+            deathUIImage.gameObject.SetActive(true);
+            deathUIImage.DOFillAmount(1, 0.2f);
+            deathTextUGUI.DOFade(1, 0.2f).SetDelay(0.1f);
+            yield return new WaitForSeconds(3f);
+            deathUIImage.fillOrigin = 0;
+            deathUIImage.DOFillAmount(0, 0.2f);
+            yield return new WaitForSeconds(0.2f);
+            gameManager.LoseGame();
+        }
+    }
+
 
     public void EndTurn(Combat combat)
     {

@@ -24,7 +24,8 @@ public class ChasingAI : MonoBehaviour
 
     [SerializeField] List<Vector3> availableDirections = new List<Vector3>();
 
-    private bool _canRunAI;
+    [HideInInspector]
+    public bool _canRunAI;
 
     private void Awake()
     {
@@ -107,7 +108,7 @@ public class ChasingAI : MonoBehaviour
         }
     }
 
-    private void KillPlayer()
+    public void KillPlayer()
     {
         Debug.Log("Kill player");
         _canRunAI = false;
@@ -186,7 +187,7 @@ public class ChasingAI : MonoBehaviour
         //Shoot raycasts and check if the viable directions are already in the available directions. If not add them and recalculate moving direction
         foreach(Ray ray in rays)
         {
-            if(!Physics.Raycast(ray, 1, movementBlockLayer))
+            if(!Physics.Raycast(ray, .5f, movementBlockLayer))
             {
                 if (!availableDirections.Contains(ray.direction))
                 {
@@ -212,10 +213,12 @@ public class ChasingAI : MonoBehaviour
                 availableDirections.Add(-availableDirections[0]);
             }
         }
+
+        // if (availableDirections.Count > 0)
+        // {
+        // }
         currentDirection = availableDirections[0];
         transform.position = Vector3.MoveTowards(transform.position, Vector3Int.RoundToInt(transform.position + currentDirection), Time.deltaTime);
-
-
     }
 
     void Chase()

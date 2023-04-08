@@ -36,8 +36,7 @@ public class WorldManager : MonoBehaviour
         
         RenderSettings.fogColor = hell.activeSelf ? fogColorHell : fogColorOverworld;
 
-
-        player.Damage(10);
+        player.Damage(1);
     }
 
 }
